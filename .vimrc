@@ -16,14 +16,14 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'AutoClose'
 Plugin 'kien/rainbow_parentheses.vim'
-"Bundle 'klen/python-mode'
+
 Bundle 'The-NERD-tree'
 ""Bundle 'ZenCoding.vim'  rename to the following
-Bundle 'mattn/emmet-vim'
-Bundle 'EasyMotion'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
-Bundle 'altercation/vim-colors-solarized'
+""Bundle 'mattn/emmet-vim'
+Bundle 'EasyMotion'
+Bundle 'klen/python-mode'
+Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Rainbow-Parentheses-Improved'
 
 "Plugin 'Auto-Changing-color-script'
@@ -54,13 +54,12 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "above is from Vundle
-"colo desert
-set background=dark
-colorscheme solarized
+colo desert
 set modeline
 set autochdir
 set number
 set cursorline 
+set wildmenu
 "set foldmethod=indent
 
 syntax enable
@@ -74,22 +73,20 @@ let Tlist_Exit_OnlyWindow=1
 "map <F5> :w<CR>make<CR>
 set hlsearch
 nmap s :nohlsearch<CR>
-
-"sudo save
-"cmap sw w !sudo tee %  
+"vmap <D-c> "+y
+"nmap <D-v> "+p
+"imap <D-v> "+p
 
 " shorty indent for web
-autocmd FileType javascript,html,css,xml set autoindent
-autocmd FileType javascript,html,css,xml set expandtab	"tab展开
-autocmd FileType javascript,html,css,xml set shiftwidth=2 "每一级缩进2空格
-autocmd FileType javascript,html,css,xml set tabstop=2 "一个tab占2空格
-autocmd FileType javascript,html,css,xml set softtabstop=2 "每次退格删2个空格
-"python
-au FileType python set ts=4
-au FileType python set sts=4
-au FileType python set sw=4
-au FileType python set et
-au FileType python set ai
+autocmd FileType javascript,html,css,xml,lua set ai
+autocmd FileType javascript,html,css,xml,lua set et	"tab展开
+autocmd FileType javascript,html,css,xml,lua set sw=2 "每一级缩进2空格
+autocmd FileType javascript,html,css,xml,lua set ts=2 "一个tab占2空格
+autocmd FileType javascript,html,css,xml,lua set sts=2 "每次退格删2个空格
+autocmd FileType python set ai
+autocmd FileType python set et
+autocmd FileType python set sw=4
+autocmd FileType python set sts=4
 "RainbowParentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -98,10 +95,7 @@ au Syntax * RainbowParenthesesLoadBraces
 "EasyMotion"
 let g:EasyMotion_leader_key = ';'
 
-"NERDTree
 "autocmd VimEnter * NERDTree
-"page up & down
-"map <C-j> <C-f>
-"map <C-k> <C-b>
-"python mode
+
+"python-mode
 "let g:pymode_python = 'python3'
