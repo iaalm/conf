@@ -1,6 +1,3 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -25,6 +22,7 @@ Bundle 'EasyMotion'
 Bundle 'klen/python-mode'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Rainbow-Parentheses-Improved'
+"Plugin 'tpope/vim-surround'
 
 "Plugin 'Auto-Changing-color-script'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -76,6 +74,8 @@ nmap s :nohlsearch<CR>
 "vmap <D-c> "+y
 "nmap <D-v> "+p
 "imap <D-v> "+p
+vmap " c""<ESC>P
+vmap ( c()<ESC>P
 
 " shorty indent for web
 autocmd FileType javascript,html,css,xml,lua set ai
@@ -93,9 +93,7 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 "EasyMotion"
-let g:EasyMotion_leader_key = ';'
-
-"autocmd VimEnter * NERDTree
+let g:EasyMotion_leader_key = ','
 
 "python-mode
 "let g:pymode_python = 'python3'
