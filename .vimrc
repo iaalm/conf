@@ -74,8 +74,6 @@ nmap s :nohlsearch<CR>
 "vmap <D-c> "+y
 "nmap <D-v> "+p
 "imap <D-v> "+p
-vmap " c""<ESC>P
-vmap ( c()<ESC>P
 
 " shorty indent for web
 autocmd FileType javascript,html,css,xml,lua set ai
@@ -97,3 +95,18 @@ let g:EasyMotion_leader_key = ','
 
 "python-mode
 "let g:pymode_python = 'python3'
+
+function! AddParenthese(place)
+	let [lnum_start, cnum_start] = getpos("'<")[1:2]
+	let [lnum_end, cnum_end] = getpos("'>")[1:2]
+	call cursor(lnum_end, cnum_end)
+	norm! a)
+	call cursor(lnum_start, cnum_start)
+	norm! i(
+	if a:place == 1
+		call cursor(lnum_end, cnum_end+2)   "two character for ()
+	endif
+endfunction
+vmap " c""<ESC>P
+vmap ( :call AddParenthese(0)<CR>
+vmap ) :call AddParenthese(1)<CR>
