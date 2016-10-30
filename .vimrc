@@ -11,7 +11,8 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
-Plugin 'AutoClose'
+"Plugin 'AutoClose'
+Plugin 'Townk/vim-autoclose'
 Plugin 'kien/rainbow_parentheses.vim'
 
 Bundle 'The-NERD-tree'
@@ -93,20 +94,24 @@ au Syntax * RainbowParenthesesLoadBraces
 "EasyMotion"
 let g:EasyMotion_leader_key = ','
 
+"AutoClose"
+let g:AutoCloseSelectionWrapPrefix=""
+
 "python-mode
 "let g:pymode_python = 'python3'
 
-function! AddParenthese(place)
-	let [lnum_start, cnum_start] = getpos("'<")[1:2]
-	let [lnum_end, cnum_end] = getpos("'>")[1:2]
-	call cursor(lnum_end, cnum_end)
-	norm! a)
-	call cursor(lnum_start, cnum_start)
-	norm! i(
-	if a:place == 1
-		call cursor(lnum_end, cnum_end+2)   "two character for ()
-	endif
-endfunction
-vmap " c""<ESC>P
-vmap ( :call AddParenthese(0)<CR>
-vmap ) :call AddParenthese(1)<CR>
+"My surround. work but AutoClose is a better way
+"function! AddParenthese(place)
+"	let [lnum_start, cnum_start] = getpos("'<")[1:2]
+"	let [lnum_end, cnum_end] = getpos("'>")[1:2]
+"	call cursor(lnum_end, cnum_end)
+"	norm! a)
+"	call cursor(lnum_start, cnum_start)
+"	norm! i(
+"	if a:place == 1
+"		call cursor(lnum_end, cnum_end+2)   "two character for ()
+"	endif
+"endfunction
+"vmap " c""<ESC>P
+"vmap ( :call AddParenthese(0)<CR>
+"vmap ) :call AddParenthese(1)<CR>
