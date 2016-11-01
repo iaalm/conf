@@ -60,22 +60,18 @@ set modeline
 set number
 set cursorline 
 set wildmenu
+set autoindent
+set autoread
 "set foldmethod=indent
 
 syntax enable
 syntax on
 
-set autoindent
-set autoread
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 
-"map <F5> :w<CR>make<CR>
 set hlsearch
-nmap s :nohlsearch<CR>
-"vmap <D-c> "+y
-"nmap <D-v> "+p
-"imap <D-v> "+p
+nnoremap s :nohlsearch<CR>
 
 " shorty indent for web
 autocmd FileType javascript,html,css,xml,lua set ai
@@ -88,15 +84,15 @@ autocmd FileType python set et
 autocmd FileType python set sw=4
 autocmd FileType python set sts=4
 "RainbowParentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
 "EasyMotion"
 let g:EasyMotion_leader_key = ','
 
 "AutoClose"
-let g:AutoCloseSelectionWrapPrefix=""
+"let g:AutoCloseSelectionWrapPrefix=""
 
 "python-mode
 "let g:pymode_python = 'python3'
@@ -113,6 +109,6 @@ function! AddParenthese(place)
 		call cursor(lnum_end, cnum_end+2)   "two character for ()
 	endif
 endfunction
-vmap " c""<ESC>P
-vmap ( :call AddParenthese(0)<CR>
-vmap ) :call AddParenthese(1)<CR>
+vnoremap " c""<ESC>P
+vnoremap ( :call AddParenthese(0)<CR>
+vnoremap ) :call AddParenthese(1)<CR>
