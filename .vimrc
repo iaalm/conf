@@ -1,5 +1,6 @@
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+let Leader="\\"
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -11,8 +12,8 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
-"Plugin 'AutoClose'
-Plugin 'Townk/vim-autoclose'
+Plugin 'AutoClose'
+"Plugin 'Townk/vim-autoclose'
 "Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'luochen1990/rainbow'
 
@@ -56,26 +57,22 @@ filetype plugin indent on    " required
 "above is from Vundle
 colo desert
 set modeline
-set autochdir
+"set autochdir
 set number
 set cursorline 
 set wildmenu
+set autoindent
+set autoread
 "set foldmethod=indent
 
 syntax enable
 syntax on
 
-set autoindent
-set autoread
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 
-"map <F5> :w<CR>make<CR>
 set hlsearch
-nmap s :nohlsearch<CR>
-"vmap <D-c> "+y
-"nmap <D-v> "+p
-"imap <D-v> "+p
+nnoremap s :nohlsearch<CR>
 
 " shorty indent for web
 autocmd FileType javascript,html,css,xml,lua set ai
@@ -97,23 +94,23 @@ let g:rainbow_active = 1
 let g:EasyMotion_leader_key = ','
 
 "AutoClose"
-let g:AutoCloseSelectionWrapPrefix=""
+"let g:AutoCloseSelectionWrapPrefix=""
 
 "python-mode
 "let g:pymode_python = 'python3'
 
-"My surround. work but AutoClose is a better way
-"function! AddParenthese(place)
-"	let [lnum_start, cnum_start] = getpos("'<")[1:2]
-"	let [lnum_end, cnum_end] = getpos("'>")[1:2]
-"	call cursor(lnum_end, cnum_end)
-"	norm! a)
-"	call cursor(lnum_start, cnum_start)
-"	norm! i(
-"	if a:place == 1
-"		call cursor(lnum_end, cnum_end+2)   "two character for ()
-"	endif
-"endfunction
-"vmap " c""<ESC>P
-"vmap ( :call AddParenthese(0)<CR>
-"vmap ) :call AddParenthese(1)<CR>
+"My surround.
+function! AddParenthese(place)
+	let [lnum_start, cnum_start] = getpos("'<")[1:2]
+	let [lnum_end, cnum_end] = getpos("'>")[1:2]
+	call cursor(lnum_end, cnum_end)
+	norm! a)
+	call cursor(lnum_start, cnum_start)
+	norm! i(
+	if a:place == 1
+		call cursor(lnum_end, cnum_end+2)   "two character for ()
+	endif
+endfunction
+vnoremap " c""<ESC>P
+vnoremap ( :call AddParenthese(0)<CR>
+vnoremap ) :call AddParenthese(1)<CR>
