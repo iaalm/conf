@@ -109,6 +109,5 @@ function! AddParenthese(place)
 		call cursor(lnum_end, cnum_end+2)   "two character for ()
 	endif
 endfunction
-vnoremap " c""<ESC>P
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
