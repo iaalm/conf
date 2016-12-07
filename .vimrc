@@ -14,7 +14,8 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'AutoClose'
 "Plugin 'Townk/vim-autoclose'
-Plugin 'kien/rainbow_parentheses.vim'
+"Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 
 Bundle 'The-NERD-tree'
 ""Bundle 'ZenCoding.vim'  rename to the following
@@ -84,10 +85,11 @@ autocmd FileType python set et
 autocmd FileType python set sw=4
 autocmd FileType python set sts=4
 "RainbowParentheses
-autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1
 "EasyMotion"
 let g:EasyMotion_leader_key = ','
 
