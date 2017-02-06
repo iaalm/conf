@@ -23,7 +23,9 @@ Plugin 'kien/ctrlp.vim'
 ""Bundle 'mattn/emmet-vim'
 Bundle 'EasyMotion'
 Bundle 'klen/python-mode'
-Plugin 'Valloric/YouCompleteMe'
+Bundle 'xolox/vim-lua-ftplugin'
+Bundle 'xolox/vim-misc'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Rainbow-Parentheses-Improved'
 "Plugin 'tpope/vim-surround'
 
@@ -72,6 +74,7 @@ let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 
 set hlsearch
+hi Pmenu ctermbg=grey
 nnoremap s :nohlsearch<CR>
 
 " shorty indent for web
@@ -97,7 +100,7 @@ let g:EasyMotion_leader_key = ','
 "let g:AutoCloseSelectionWrapPrefix=""
 
 "python-mode
-"let g:pymode_python = 'python3'
+let g:pymode_python = 'python3'
 
 "My surround.
 function! AddParenthese(place)
@@ -113,3 +116,4 @@ function! AddParenthese(place)
 endfunction
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
+inoremap <C-f> <C-x><C-f>
