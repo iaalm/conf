@@ -21,10 +21,11 @@ Bundle 'The-NERD-tree'
 ""Bundle 'ZenCoding.vim'  rename to the following
 Plugin 'kien/ctrlp.vim'
 ""Bundle 'mattn/emmet-vim'
-Bundle 'EasyMotion'
+""Bundle 'EasyMotion'
 Bundle 'klen/python-mode'
 Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'xolox/vim-misc'
+Bundle 'skywind3000/asyncrun.vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Rainbow-Parentheses-Improved'
 "Plugin 'tpope/vim-surround'
@@ -75,6 +76,10 @@ let Tlist_Exit_OnlyWindow=1
 
 set hlsearch
 hi Pmenu ctermbg=grey
+hi PmenuSel ctermfg=darkgrey
+hi TabLine ctermfg=Grey ctermbg=Black
+hi TabLineSel ctermfg=Red ctermbg=Yellow
+hi TabLineFill ctermfg=DarkGrey ctermbg=DarkGrey
 nnoremap s :nohlsearch<CR>
 
 " shorty indent for web
@@ -101,6 +106,8 @@ let g:EasyMotion_leader_key = ','
 
 "python-mode
 let g:pymode_python = 'python3'
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope = 0
 
 "My surround.
 function! AddParenthese(place)
@@ -117,3 +124,7 @@ endfunction
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
 inoremap <C-f> <C-x><C-f>
+nnoremap <C-l> gt
+nnoremap <C-h> gT
+inoremap <C-e> <C-o>A
+nnoremap , :
