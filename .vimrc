@@ -1,6 +1,6 @@
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-let Leader="\\"
+let mapleader = " "
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -127,4 +127,5 @@ inoremap <C-f> <C-x><C-f>
 nnoremap <C-l> gt
 nnoremap <C-h> gT
 inoremap <C-e> <C-o>A
-nnoremap , :
+nnoremap <leader>w :wq<CR>
+nnoremap <leader>s :%s/
