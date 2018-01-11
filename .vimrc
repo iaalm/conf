@@ -129,3 +129,4 @@ nnoremap <C-h> gT
 inoremap <C-e> <C-o>A
 nnoremap <leader>w :wq<CR>
 nnoremap <leader>s :%s/
+nnoremap <C-s> :w<CR>
