@@ -127,6 +127,6 @@ inoremap <C-f> <C-x><C-f>
 nnoremap <C-l> gt
 nnoremap <C-h> gT
 inoremap <C-e> <C-o>A
-nnoremap <leader>w :wq<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 nnoremap <leader>s :%s/
-nnoremap <C-s> :w<CR>
