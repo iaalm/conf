@@ -130,3 +130,4 @@ inoremap <C-e> <C-o>A
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :%s/
+nnoremap <leader>r :w<CR>:!!<CR>
