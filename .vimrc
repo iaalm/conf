@@ -133,3 +133,4 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>s :%s/
 nnoremap <leader>r :w<CR>:!!<CR>
 nnoremap <leader>s :nohlsearch<CR>
+nnoremap <leader>t :shell<CR>
