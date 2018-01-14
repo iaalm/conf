@@ -80,7 +80,6 @@ hi PmenuSel ctermfg=darkgrey
 hi TabLine ctermfg=Grey ctermbg=Black
 hi TabLineSel ctermfg=Red ctermbg=Yellow
 hi TabLineFill ctermfg=DarkGrey ctermbg=DarkGrey
-nnoremap s :nohlsearch<CR>
 
 " shorty indent for web
 autocmd FileType javascript,html,css,xml,lua set ai
@@ -131,3 +130,4 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :%s/
 nnoremap <leader>r :w<CR>:!!<CR>
+nnoremap <leader>s :nohlsearch<CR>
