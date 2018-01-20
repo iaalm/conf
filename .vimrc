@@ -1,7 +1,7 @@
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 let mapleader = " "
-let maplocalleader = 's'
+let maplocalleader = "s"
 " , can also do something
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -68,6 +68,8 @@ set cursorline
 set wildmenu
 set autoindent
 set autoread
+set ignorecase
+set smartcase
 "set foldmethod=indent
 
 syntax enable
@@ -131,6 +133,7 @@ inoremap <C-e> <C-o>A
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :%s/
-nnoremap <leader>r :w<CR>:!!<CR>
+" nnoremap <leader>r :w<CR>:!!<CR>
+nnoremap <leader>r :w<CR>:AsyncRun ./%<CR>:copen<CR><C-w>k<C-w>k
 nnoremap <leader>s :nohlsearch<CR>
 nnoremap <leader>t :shell<CR>
