@@ -24,10 +24,13 @@ Bundle 'The-NERD-tree'
 Plugin 'kien/ctrlp.vim'
 ""Bundle 'mattn/emmet-vim'
 ""Bundle 'EasyMotion'
-Bundle 'klen/python-mode'
+""Bundle 'klen/python-mode'
 Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'xolox/vim-misc'
 Bundle 'skywind3000/asyncrun.vim'
+Plugin 'Shougo/vimproc'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'pseewald/vim-anyfold'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Rainbow-Parentheses-Improved'
 "Plugin 'tpope/vim-surround'
@@ -112,6 +115,9 @@ let g:pymode_python = 'python3'
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
 
+"Anyfold
+let anyfold_activate=1
+
 "My surround.
 function! AddParenthese(place)
 	let [lnum_start, cnum_start] = getpos("'<")[1:2]
@@ -137,3 +143,10 @@ nnoremap <leader>s :%s/
 nnoremap <leader>r :w<CR>:AsyncRun ./%<CR>:copen<CR><C-w>k<C-w>k
 nnoremap <leader>s :nohlsearch<CR>
 nnoremap <leader>t :shell<CR>
+nnoremap <leader>b :AsyncRun sbatch slurm<CR>
+nnoremap <leader>e :e<CR>
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+
