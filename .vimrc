@@ -23,6 +23,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " set cwd to project root
 Plug 'airblade/vim-rooter'
+" git
+Plug 'tpope/vim-fugitive'
+
 " Any valid git URL is allowed
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
