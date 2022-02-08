@@ -58,6 +58,21 @@ call plug#end()
 let g:rooter_patterns = ['.git']
 " end vim-plug
 
+" OS specific setting
+if has("mac")
+    "Mac
+elseif has("win32") || has("win64")
+    "all Windows, ie win32,win64
+    set shell=powershell
+elseif has("win32unix")
+    "Cygwin
+elseif has("bsd")
+    "BSD-based, ie freeBSD"
+elseif has("linux")
+    "Linux
+end
+
+" settings
 let mapleader = " "
 let maplocalleader = "s"
 colo desert
