@@ -53,20 +53,25 @@ Plug 'tpope/vim-fugitive'
 
 " Initialize plugin system
 call plug#end()
+
+" plgugin setup
 let g:rooter_patterns = ['.git']
+" end vim-plug
+
 let mapleader = " "
 let maplocalleader = "s"
-"above is from Vundle
 colo desert
 set modeline
-"set autochdir
 set number
-set cursorline 
+set cursorline
 set wildmenu
 set autoindent
 set autoread
 set ignorecase
 set smartcase
+" display tab and tail white space
+set list
+set listchars=tab:>-,trail:<
 "set foldmethod=indent
 syntax enable
 syntax on
@@ -80,8 +85,6 @@ hi TabLineFill ctermfg=DarkGrey ctermbg=DarkGrey
 
 " shorty indent for web
 let g:rainbow_active = 1
-"EasyMotion"
-let g:EasyMotion_leader_key = '<leader><leader>'
 
 "My surround.
 function! AddParenthese(place)
