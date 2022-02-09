@@ -16,6 +16,9 @@ Plug 'airblade/vim-rooter'
 let g:rooter_patterns = ['.git']
 " git
 Plug 'tpope/vim-fugitive'
+if has("win32") || has("win64")
+    Plug 'OmniSharp/omnisharp-vim'
+end
 call plug#end()
 " end vim-plug
 
@@ -24,7 +27,7 @@ if has("mac")
     "Mac
 elseif has("win32") || has("win64")
     "all Windows, ie win32,win64
-   set shell=powershell
+   set shell=powershell\ -NoProfile
    set shellcmdflag=\ -c
    set shellquote=\"
    set shellxquote= 
@@ -50,6 +53,8 @@ set ignorecase
 set smartcase
 set hlsearch
 " display tab and tail white space
+set ts=4
+set expandtab
 set list
 set listchars=tab:>-,trail:<
 "set foldmethod=indent
