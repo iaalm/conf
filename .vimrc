@@ -15,9 +15,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 let g:rooter_patterns = ['.git']
 " git
+Plug 'itchyny/lightline.vim', { 'for': 'cs' }
+"set laststatus=2
 Plug 'tpope/vim-fugitive'
 if has("win32") || has("win64")
     Plug 'OmniSharp/omnisharp-vim'
+    Plug 'nickspoons/vim-sharpenup'
+    Plug 'pprovost/vim-ps1'
 end
 call plug#end()
 " end vim-plug
@@ -57,6 +61,8 @@ set ts=4
 set expandtab
 set list
 set listchars=tab:>-,trail:<
+" enable backspace anything
+set backspace=indent,eol,start
 "set foldmethod=indent
 syntax enable
 syntax on
@@ -82,3 +88,17 @@ endfunction
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
 nnoremap <leader>s :nohlsearch<CR>
+" C sharp
+autocmd FileType cs set laststatus=2
+autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
+autocmd FileType cs let g:lightline = {
+\ 'active': {
+\   'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype', 'sharpenup']]
+\ },
+\ 'inactive': {
+\   'right': [['lineinfo'], ['percent'], ['sharpenup']]
+\ },
+\ 'component': {
+\   'sharpenup': sharpenup#statusline#Build()
+\ }
+\}
