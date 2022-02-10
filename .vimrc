@@ -45,6 +45,7 @@ end
 
 " settings
 let mapleader = " "
+nnoremap s <nop>
 let maplocalleader = "s"
 colo evening
 set modeline
