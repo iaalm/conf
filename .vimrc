@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 " ctrl-p
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 let g:NERDTreeShowHidden=1
 " Easy motion
