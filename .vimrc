@@ -11,6 +11,8 @@ Plug 'easymotion/vim-easymotion'
 " Ag search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+autocmd VimEnter * command! -nargs=* -complete=file Agu :call fzf#vim#ag_raw('-U '. <q-args>)
+autocmd VimEnter * command! -nargs=* -complete=file Agr :call fzf#vim#ag_raw(<q-args>)
 " set cwd to project root
 Plug 'airblade/vim-rooter'
 let g:rooter_patterns = ['.git']
