@@ -63,6 +63,8 @@ set hlsearch
 set ts=4
 set expandtab
 set list
+" Display cwd on title
+set titlestring=%{getcwd()}
 set listchars=tab:>-,trail:<
 " enable backspace anything
 set backspace=indent,eol,start
