@@ -1,9 +1,13 @@
 call plug#begin()
+" solarized color schema
+Plug 'altercation/vim-colors-solarized'
 " Make sure you use single quotes
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 " ctrl-p
 Plug 'ctrlpvim/ctrlp.vim'
+" search file, buffer, MRU at same time
+let g:ctrlp_cmd = 'CtrlPMixed'
 Plug 'preservim/nerdtree'
 let g:NERDTreeShowHidden=1
 " Easy motion
@@ -49,7 +53,7 @@ end
 let mapleader = " "
 nnoremap s <nop>
 let maplocalleader = "s"
-colo evening
+colo solarized
 set modeline
 set number
 set cursorline
