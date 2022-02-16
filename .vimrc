@@ -91,6 +91,9 @@ endfunction
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
 nnoremap <leader>s :nohlsearch<CR>
+nnoremap <leader>p :Commands<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
+
 " C sharp
 autocmd FileType cs set laststatus=2
 autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
