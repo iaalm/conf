@@ -1,4 +1,6 @@
 call plug#begin()
+" solarized color schema
+Plug 'altercation/vim-colors-solarized'
 " Make sure you use single quotes
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
@@ -51,7 +53,7 @@ end
 let mapleader = " "
 nnoremap s <nop>
 let maplocalleader = "s"
-colo evening
+colo solarized
 set modeline
 set number
 set cursorline
