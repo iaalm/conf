@@ -17,6 +17,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 autocmd VimEnter * command! -nargs=* -complete=file Agu :call fzf#vim#ag_raw('-U '. <q-args>)
 autocmd VimEnter * command! -nargs=* -complete=file Agr :call fzf#vim#ag_raw(<q-args>)
+Plug 'dominickng/fzf-session.vim'
+let g:fzf_session_path = $HOME . "/.vim_session"
 " set cwd to project root
 Plug 'airblade/vim-rooter'
 let g:rooter_patterns = ['.git']
@@ -99,6 +101,7 @@ vnoremap ) :call AddParenthese(1)<CR>
 nnoremap <leader>s :nohlsearch<CR>
 nnoremap <leader>p :Commands<CR>
 nnoremap <leader>n :NERDTreeFind<CR>
+nnoremap <leader>r :Sessions<CR>
 
 " C sharp
 autocmd FileType cs set laststatus=2
