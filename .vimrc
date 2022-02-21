@@ -117,3 +117,17 @@ autocmd FileType cs let g:lightline = {
 \   'sharpenup': sharpenup#statusline#Build()
 \ }
 \}
+
+" Vim verbose log
+" the log is very "verbose", so not using hidden file to notice myself to
+" delete it
+function! ToggleVerbose()
+    if !&verbose
+        set verbosefile=~/vim_verbose.log
+        set verbose=15
+    else
+        set verbose=0
+        set verbosefile=
+    endif
+endfunction
+
