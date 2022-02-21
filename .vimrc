@@ -66,8 +66,10 @@ set ignorecase
 set smartcase
 set hlsearch
 " display tab and tail white space
-set ts=4
+set tabstop=4
+set shiftwidth=4
 set expandtab
+
 set list
 " Display cwd on title
 set titlestring=%{getcwd()}
