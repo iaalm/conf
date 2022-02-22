@@ -72,13 +72,14 @@ set expandtab
 
 set list
 " Display cwd on title
-set titlestring=%{getcwd()}
+set titlestring=%{getcwd()}\ %f
 set listchars=tab:>-,trail:<
 " enable backspace anything
 set backspace=indent,eol,start
 "set foldmethod=indent
 syntax enable
 syntax on
+set foldmethod=syntax
 
 hi Pmenu ctermbg=grey
 hi PmenuSel ctermfg=darkgrey
