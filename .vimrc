@@ -39,10 +39,11 @@ if has("mac")
     "Mac
 elseif has("win32") || has("win64")
     "all Windows, ie win32,win64
-   set shell=powershell\ -NoProfile
-   set shellcmdflag=\ -c
-   set shellquote=\"
-   set shellxquote= 
+    " use powershell
+    "set shell=powershell\ -NoProfile
+    "set shellcmdflag=\ -c
+    "set shellquote=\"
+    "set shellxquote= 
 elseif has("win32unix")
     "Cygwin
 elseif has("bsd")
