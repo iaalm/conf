@@ -56,19 +56,26 @@ let mapleader = " "
 nnoremap s <nop>
 let maplocalleader = "s"
 colo solarized
+set nocompatible
 set modeline
 set number
+set ruler
 set cursorline
 set wildmenu
-set autoindent
 set autoread
+" search
 set ignorecase
 set smartcase
 set hlsearch
+set incsearch
 " display tab and tail white space
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
+set smarttab
+" complete not search current dir
+set complete-=i
 
 set list
 " Display cwd on title
