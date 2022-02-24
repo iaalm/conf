@@ -17,7 +17,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 autocmd VimEnter * command! -nargs=* -complete=file Agu :call fzf#vim#ag_raw('-U '. <q-args>)
 autocmd VimEnter * command! -nargs=* -complete=file Agr :call fzf#vim#ag_raw(<q-args>)
-Plug 'dominickng/fzf-session.vim'
+Plug 'iaalm/fzf-session.vim'
 let g:fzf_session_path = $HOME . "/.vim_session"
 " set cwd to project root
 Plug 'airblade/vim-rooter'
