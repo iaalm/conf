@@ -118,6 +118,7 @@ nnoremap <leader>y :let &bg=(&bg=='light'?'dark':'light')<cr>
 
 " C sharp
 autocmd FileType cs set laststatus=2
+autocmd FileType cs set foldlevel=2    " display namespace - class - function
 autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
 autocmd FileType cs let g:lightline = {
 \ 'active': {
