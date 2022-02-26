@@ -88,6 +88,28 @@ set backspace=indent,eol,start
 syntax enable
 syntax on
 set foldmethod=syntax
+" set foldcolumn=2
+
+" better fold display
+function! FoldText()
+    let line = getline(v:foldstart)
+    let foldedlinecount = v:foldend - v:foldstart
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 1
+
+    " expand tabs into spaces
+    let onetab = strpart('    ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    " always give some space to dash
+    let line = strpart(line, 0, windowwidth - len(foldedlinecount) - 5)
+    " 3 for three space, one before and one after dash and one after number
+    let fillcharcount = windowwidth - len(line) - 3
+
+    return line . " " . repeat("-", fillcharcount) . " " . foldedlinecount
+endfunction
+set foldtext=FoldText()
 
 hi Pmenu ctermbg=grey
 hi PmenuSel ctermfg=darkgrey
