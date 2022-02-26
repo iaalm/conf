@@ -96,7 +96,7 @@ function! FoldText()
     let foldedlinecount = v:foldend - v:foldstart
 
     let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 1
+    let windowwidth = winwidth(0) - nucolwidth
 
     " expand tabs into spaces
     let onetab = strpart('    ', 0, &tabstop)
@@ -104,8 +104,8 @@ function! FoldText()
 
     " always give some space to dash
     let line = strpart(line, 0, windowwidth - len(foldedlinecount) - 5)
-    " 3 for three space, one before and one after dash and one after number
-    let fillcharcount = windowwidth - len(line) - 3
+    " 2 for three space, one before and one after dash
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 2
 
     return line . " " . repeat("-", fillcharcount) . " " . foldedlinecount
 endfunction
@@ -140,6 +140,7 @@ nnoremap <leader>y :let &bg=(&bg=='light'?'dark':'light')<cr>
 
 " C sharp
 autocmd FileType cs set laststatus=2
+autocmd FileType cs set foldlevel=2    " display namespace - class - function
 autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
 autocmd FileType cs let g:lightline = {
 \ 'active': {
