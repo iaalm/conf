@@ -27,7 +27,7 @@ Plug 'itchyny/lightline.vim', { 'for': 'cs' }
 "set laststatus=2
 Plug 'tpope/vim-fugitive'
 " logfile highlight
-Plug 'andreshazard/vim-logreview'
+Plug 'mtdl9/vim-log-highlighting'
 if has("win32") || has("win64")
     Plug 'OmniSharp/omnisharp-vim'
     Plug 'nickspoons/vim-sharpenup'
