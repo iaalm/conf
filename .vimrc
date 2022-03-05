@@ -139,6 +139,7 @@ nnoremap <leader>n :NERDTreeFind<CR>
 nnoremap <leader>r :Sessions<CR>
 " toggle backgroud between light and dark
 nnoremap <leader>y :let &bg=(&bg=='light'?'dark':'light')<cr>
+nnoremap <leader>f :Rg <CR>
 
 " C sharp
 autocmd FileType cs set laststatus=2
