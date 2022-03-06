@@ -158,7 +158,10 @@ autocmd FileType cs let g:lightline = {
 \ }
 \}
 
-" Windows projects
+" Java
+autocmd FileType java set foldlevel=1    " display namespace - class - function
+
+" Windows projects, TODO: replace to Filetype
 autocmd BufNewFile,BufRead *.proj set filetype=xml
 autocmd BufNewFile,BufRead *.csproj set filetype=xml
 autocmd BufNewFile,BufRead *.vcxproj set filetype=xml
