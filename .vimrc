@@ -40,6 +40,7 @@ call plug#end()
 if has("mac")
     "Mac
 elseif has("win32") || has("win64")
+    vnoremap <C-c> "+y
     "all Windows, ie win32,win64
     " use powershell
     "set shell=powershell\ -NoProfile
