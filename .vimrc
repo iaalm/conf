@@ -161,6 +161,9 @@ autocmd FileType cs let g:lightline = {
 " Java
 autocmd FileType java set foldlevel=1    " display namespace - class - function
 
+" Json
+autocmd FileType json set foldlevel=20
+
 " Windows projects, TODO: replace to Filetype
 autocmd BufNewFile,BufRead *.proj set filetype=xml
 autocmd BufNewFile,BufRead *.csproj set filetype=xml
@@ -179,5 +182,8 @@ function! ToggleVerbose()
         set verbose=0
         set verbosefile=
     endif
+endfunction
+function! FormatJson()
+    %!python -m json.tool
 endfunction
 
