@@ -13,11 +13,11 @@ Plug 'preservim/nerdtree'
 let g:NERDTreeShowHidden=1
 " Easy motion
 Plug 'easymotion/vim-easymotion'
-" Ag search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-autocmd VimEnter * command! -nargs=* -complete=file Agu :call fzf#vim#ag_raw('-U '. <q-args>)
-autocmd VimEnter * command! -nargs=* -complete=file Agr :call fzf#vim#ag_raw(<q-args>)
+" using more Rg now
+" autocmd VimEnter * command! -nargs=* -complete=file Agu :call fzf#vim#ag_raw('-U '. <q-args>)
+" autocmd VimEnter * command! -nargs=* -complete=file Agr :call fzf#vim#ag_raw(<q-args>)
 Plug 'iaalm/fzf-session.vim'
 let g:fzf_session_path = $HOME . "/.vim_session"
 " set cwd to project root
@@ -41,8 +41,8 @@ call plug#end()
 if has("mac")
     "Mac
 elseif has("win32") || has("win64")
-    vnoremap <C-c> "+y
     "all Windows, ie win32,win64
+    vnoremap <C-c> "+y
     " use powershell
     "set shell=powershell\ -NoProfile
     "set shellcmdflag=\ -c
@@ -167,7 +167,7 @@ autocmd FileType java set foldlevel=1    " display namespace - class - function
 " Json
 autocmd FileType json set foldlevel=20
 
-" Windows projects, TODO: replace to Filetype
+" Windows projects
 autocmd BufNewFile,BufRead *.proj set filetype=xml
 autocmd BufNewFile,BufRead *.csproj set filetype=xml
 autocmd BufNewFile,BufRead *.vcxproj set filetype=xml
