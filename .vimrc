@@ -2,7 +2,6 @@ call plug#begin()
 " color schema
 Plug 'altercation/vim-colors-solarized'
 Plug 'liuchengxu/space-vim-theme'
-" Make sure you use single quotes
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 " ctrl-p
@@ -10,7 +9,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " search file, buffer, MRU at same time
 let g:ctrlp_cmd = 'CtrlPMixed'
 Plug 'preservim/nerdtree'
-let g:NERDTreeShowHidden=1
+" let g:NERDTreeShowHidden=1
 " Easy motion
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -135,8 +134,10 @@ function! AddParenthese(place)
         call cursor(lnum_end, cnum_end+2)   "two character for ()
     endif
 endfunction
+" select and add () around it
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
+" leaders
 nnoremap <leader>s :nohlsearch<CR>
 nnoremap <leader>p :Commands<CR>
 nnoremap <leader>n :NERDTreeFind<CR>
