@@ -174,6 +174,8 @@ autocmd BufNewFile,BufRead *.csproj set filetype=xml
 autocmd BufNewFile,BufRead *.vcxproj set filetype=xml
 autocmd BufNewFile,BufRead *.nuproj set filetype=xml
 autocmd BufNewFile,BufRead *.sfproj set filetype=xml
+autocmd BufNewFile,BufRead *.props set filetype=xml
+autocmd BufNewFile,BufRead *.targets set filetype=xml
 
 " Vim verbose log
 " the log is very "verbose", so not using hidden file to notice myself to
