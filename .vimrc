@@ -7,7 +7,9 @@ let g:rainbow_active = 1
 " ctrl-p
 Plug 'ctrlpvim/ctrlp.vim'
 " search file, buffer, MRU at same time
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPMRU'
+" only show MRU in current working directory
+let g:ctrlp_mruf_relative = 1
 Plug 'preservim/nerdtree'
 " let g:NERDTreeShowHidden=1
 " Easy motion
