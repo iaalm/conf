@@ -110,9 +110,10 @@ function! FoldText()
     let line = substitute(line, '\t', onetab, 'g')
 
     " always give some space to dash
-    let line = strpart(line, 0, windowwidth - len(foldedlinecount) - 5)
-    " 2 for three space, one before and one after dash
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 2
+    let line = strpart(line, 0, windowwidth - len(foldedlinecount) - 8)
+    " 2 for two space, one before and one after dash,
+    " + 2 for possible sign column
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
 
     return line . " " . repeat("-", fillcharcount) . " " . foldedlinecount
 endfunction
@@ -148,9 +149,12 @@ nnoremap <leader>r :Sessions<CR>
 nnoremap <leader>y :let &bg=(&bg=='light'?'dark':'light')<cr>
 nnoremap <leader>f :Rg <CR>
 
+" it seems a good idea to default no fold
+set foldlevel=20
+
 " C sharp
 autocmd FileType cs set laststatus=2
-autocmd FileType cs set foldlevel=2    " display namespace - class - function
+" autocmd FileType cs set foldlevel=2    " display namespace - class - function
 autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
 autocmd FileType cs let g:lightline = {
 \ 'active': {
