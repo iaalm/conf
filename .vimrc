@@ -41,8 +41,7 @@ call plug#end()
 " OS specific setting
 if has("mac")
     "Mac
-elseif has("win32") || has("win64")
-    "all Windows, ie win32,win64
+elseif has("win32") || has("win64") "all Windows, ie win32,win64
     vnoremap <C-c> "+y
     " use powershell
     "set shell=powershell\ -NoProfile
@@ -147,7 +146,8 @@ nnoremap <leader>n :NERDTreeFind<CR>
 nnoremap <leader>r :Sessions<CR>
 " toggle backgroud between light and dark
 nnoremap <leader>y :let &bg=(&bg=='light'?'dark':'light')<cr>
-nnoremap <leader>f :Rg <CR>
+nnoremap <leader>f :Rg <C-R><C-W><CR>
+vnoremap <leader>f y:Rg <C-R>"<CR>
 
 " it seems a good idea to default no fold
 set foldlevel=20
