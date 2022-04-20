@@ -83,6 +83,8 @@ set autoindent
 set smarttab
 " complete not search current dir
 set complete-=i
+" show search [x/y] indicate
+set shortmess-=S
 
 set list
 " Display cwd on title
