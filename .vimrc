@@ -208,3 +208,5 @@ endfunction
 " quick git command
 command! -nargs=0 GGPush :execute ":Git! push -u origin " . fugitive#head(0)
 command! -nargs=0 GGPull :execute ":Git! pull origin " . fugitive#head(0)
+
+command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
