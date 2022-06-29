@@ -155,6 +155,8 @@ nnoremap <leader>f :Rg <C-R><C-W><CR>
 vnoremap <leader>f y:Rg <C-R>"<CR>
 nnoremap <leader>g :vertical botright Git<CR>
 nnoremap <leader>c gg"+yG<C-o><C-o>
+nnoremap <leader>af :let @" = expand("%")<CR>
+nnoremap <leader>ap :let @" = expand("%:p")<CR>
 
 " it seems a good idea to default no fold
 set foldlevel=20
