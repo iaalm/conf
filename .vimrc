@@ -30,6 +30,9 @@ Plug 'itchyny/lightline.vim', { 'for': 'cs' }
 Plug 'tpope/vim-fugitive'
 " logfile highlight
 Plug 'mtdl9/vim-log-highlighting'
+" JSX
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 if has("win32") || has("win64")
     Plug 'OmniSharp/omnisharp-vim'
     Plug 'nickspoons/vim-sharpenup'
@@ -150,13 +153,12 @@ nnoremap <leader>p :Commands<CR>
 nnoremap <leader>n :NERDTreeFind<CR>
 nnoremap <leader>r :Sessions<CR>
 " toggle backgroud between light and dark
-nnoremap <leader>y :let &bg=(&bg=='light'?'dark':'light')<cr>
 nnoremap <leader>f :Rg <C-R><C-W><CR>
 vnoremap <leader>f y:Rg <C-R>"<CR>
 nnoremap <leader>g :vertical botright Git<CR>
 nnoremap <leader>c gg"+yG<C-o><C-o>
-nnoremap <leader>af :let @" = expand("%")<CR>
-nnoremap <leader>ap :let @" = expand("%:p")<CR>
+nnoremap <leader>yf :let @+ = expand("%")<CR>
+nnoremap <leader>yp :let @+ = expand("%:p")<CR>
 
 " it seems a good idea to default no fold
 set foldlevel=20
@@ -182,6 +184,9 @@ autocmd FileType java set foldlevel=1    " display namespace - class - function
 
 " Json
 autocmd FileType json set foldlevel=20
+
+" JavaScript
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
 
 " Windows projects
 autocmd BufNewFile,BufRead *.proj set filetype=xml
@@ -213,3 +218,5 @@ command! -nargs=0 GGPush :execute ":Git! push -u origin " . fugitive#head(0)
 command! -nargs=0 GGPull :execute ":Git! pull origin " . fugitive#head(0)
 
 command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
+command! -nargs=0 ToggleVerbose :execute "call ToggleVerbose()"
+command! -nargs=0 ToggleDark :let &bg=(&bg=='light'?'dark':'light')
