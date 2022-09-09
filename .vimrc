@@ -67,7 +67,7 @@ end
 let mapleader = " "
 nnoremap s <nop>
 let maplocalleader = "s"
-colo space_vim_theme
+colo solarized
 " colo solarized
 set nocompatible
 set modeline
