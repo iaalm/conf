@@ -10,6 +10,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_cmd = 'CtrlPMixed'
 " only show MRU in current working directory
 let g:ctrlp_mruf_relative = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|out|packages)$',
+  \ 'file': '\v\.(exe|dll|pdb|dll\.config|exe\.config|projhash|projhash.userData|projhash\.userData\.assemblies)$',
+  \ }
 Plug 'preservim/nerdtree'
 " let g:NERDTreeShowHidden=1
 " Easy motion
