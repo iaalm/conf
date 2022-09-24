@@ -15,14 +15,11 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|dll|pdb|dll\.config|exe\.config|projhash|projhash.userData|projhash\.userData\.assemblies)$',
   \ }
 Plug 'preservim/nerdtree'
-" let g:NERDTreeShowHidden=1
 " Easy motion
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " using more Rg now
-" autocmd VimEnter * command! -nargs=* -complete=file Agu :call fzf#vim#ag_raw('-U '. <q-args>)
-" autocmd VimEnter * command! -nargs=* -complete=file Agr :call fzf#vim#ag_raw(<q-args>)
 Plug 'iaalm/fzf-session.vim'
 let g:fzf_session_path = $HOME . "/.vim_session"
 " set cwd to project root
