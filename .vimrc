@@ -40,6 +40,7 @@ if has("win32") || has("win64")
     Plug 'pprovost/vim-ps1'
 end
 call plug#end()
+set bg=light
 " end vim-plug
 
 " OS specific setting
