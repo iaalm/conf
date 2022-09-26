@@ -178,7 +178,7 @@ autocmd FileType cs let g:lightline = {
 \   'right': [['lineinfo'], ['percent'], ['sharpenup']]
 \ },
 \ 'component': {
-\   'prefixHint': 'pfx: sos',
+\   'prefixHint': 'sos',
 \   'sharpenup': sharpenup#statusline#Build()
 \ }
 \}
