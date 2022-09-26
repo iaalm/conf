@@ -172,12 +172,13 @@ autocmd FileType cs set laststatus=2
 autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
 autocmd FileType cs let g:lightline = {
 \ 'active': {
-\   'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype', 'sharpenup']]
+\   'right': [['prefixHint'], ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype', 'sharpenup']]
 \ },
 \ 'inactive': {
 \   'right': [['lineinfo'], ['percent'], ['sharpenup']]
 \ },
 \ 'component': {
+\   'prefixHint': 'pfx: sos',
 \   'sharpenup': sharpenup#statusline#Build()
 \ }
 \}
