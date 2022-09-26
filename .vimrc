@@ -11,7 +11,7 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " only show MRU in current working directory
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|out|packages)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|out|packages|objd)$',
   \ 'file': '\v\.(exe|dll|pdb|dll\.config|exe\.config|projhash|projhash.userData|projhash\.userData\.assemblies)$',
   \ }
 Plug 'preservim/nerdtree'
