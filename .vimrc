@@ -2,6 +2,7 @@ call plug#begin()
 " color schema
 Plug 'altercation/vim-colors-solarized'
 Plug 'liuchengxu/space-vim-theme'
+Plug 'rafi/awesome-vim-colorschemes'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 " ctrl-p
