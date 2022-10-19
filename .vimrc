@@ -5,16 +5,7 @@ Plug 'liuchengxu/space-vim-theme'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
-" ctrl-p
-Plug 'ctrlpvim/ctrlp.vim'
-" search file, buffer, MRU at same time
-" let g:ctrlp_cmd = 'CtrlPMixed'
-" only show MRU in current working directory
-let g:ctrlp_mruf_relative = 1
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|out|packages|objd)$',
-  \ 'file': '\v\.(exe|dll|pdb|dll\.config|exe\.config|projhash|projhash.userData|projhash\.userData\.assemblies)$',
-  \ }
+
 Plug 'preservim/nerdtree'
 " Easy motion
 Plug 'easymotion/vim-easymotion'
@@ -162,6 +153,7 @@ nnoremap <leader>g :vertical botright Git<CR>
 nnoremap <leader>c gg"+yG<C-o><C-o>
 nnoremap <leader>yf :let @+ = expand("%")<CR>
 nnoremap <leader>yp :let @+ = expand("%:p")<CR>
+nnoremap <C-p> :Files<CR>
 
 " it seems a good idea to default no fold
 set foldlevel=20
