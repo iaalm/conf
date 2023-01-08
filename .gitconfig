@@ -1,5 +1,14 @@
 [user]
-	name = iaalm
 	email = iaalmsimon@gmail.com
+	name = iaalm
+	signingkey = 8C964A49BCE0D255
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[core]
+	editor = vim
+[commit]
+	gpgSign = true
+[gpg]
+	program = /usr/local/bin/gpg
+[init]
+	defaultBranch = main
