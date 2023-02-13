@@ -157,6 +157,7 @@ nnoremap <C-p> :Files<CR>
 
 " it seems a good idea to default no fold
 set foldlevel=20
+set sessionoptions-=buffers sessionoptions-=folds
 
 " C sharp
 autocmd FileType cs set laststatus=2
