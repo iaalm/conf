@@ -26,6 +26,8 @@ Plug 'mtdl9/vim-log-highlighting'
 " JSX
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+" Python
+Plug 'tmhedberg/SimpylFold'
 if has("win32") || has("win64")
     Plug 'OmniSharp/omnisharp-vim'
     Plug 'nickspoons/vim-sharpenup'
