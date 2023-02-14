@@ -69,7 +69,7 @@ set ruler
 set cursorline
 set wildmenu
 set autoread
-set colorcolumn=80
+set colorcolumn=80,120
 " search
 set ignorecase
 set smartcase
