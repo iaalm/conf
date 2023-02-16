@@ -67,6 +67,7 @@ colo solarized
 set nocompatible
 set modeline
 set number
+set relativenumber
 set ruler
 set cursorline
 set wildmenu
