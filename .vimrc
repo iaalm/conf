@@ -44,7 +44,7 @@ elseif has("win32") || has("win64") "all Windows, ie win32,win64
     vnoremap <C-c> "+y
     " terminal ctrl-v
     tnoremap <Esc> <C-w>N
-    autocmd TerminalOpen * set nonumber
+    autocmd TerminalOpen * setlocal nonumber
     " use powershell
     set shell=powershell\ -NoProfile
     set shellcmdflag=\ -c
