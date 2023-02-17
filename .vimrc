@@ -65,7 +65,8 @@ let maplocalleader = "s"
 colo solarized
 " colo solarized
 set nocompatible
-set modeline
+" not to enable modeline for security
+" set modeline
 set number
 set relativenumber
 set ruler
