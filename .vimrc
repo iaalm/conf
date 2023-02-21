@@ -221,3 +221,4 @@ command! -nargs=0 GGPull :execute ":Git! pull origin " . fugitive#head(0)
 command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
 command! -nargs=0 ToggleVerbose :execute "call ToggleVerbose()"
 command! -nargs=0 ToggleDark :let &bg=(&bg=='light'?'dark':'light')
+command! -nargs=0 Le :e %:p:h
