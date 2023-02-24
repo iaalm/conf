@@ -216,6 +216,12 @@ function! FormatJson()
     %!python -m json.tool
 endfunction
 
+function RandomColorScheme()
+  let mycolors = split(globpath(&rtp,"**/colors/*.vim"),"\n") 
+  exe 'so ' . mycolors[localtime() % len(mycolors)]
+  unlet mycolors
+endfunction
+
 " quick git command
 command! -nargs=0 GGPush :execute ":Git! push -u origin " . fugitive#head(0)
 command! -nargs=0 GGPull :execute ":Git! pull origin " . fugitive#head(0)
@@ -226,3 +232,4 @@ command! -nargs=0 ToggleDark :let &bg=(&bg=='light'?'dark':'light')
 command! -nargs=0 LCD :lcd %:p:h
 command! -nargs=0 THEX :%!xxd
 command! -nargs=0 FHEX :%!xxd -r
+command NewColor call RandomColorScheme()
