@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'altercation/vim-colors-solarized'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'rafi/awesome-vim-colorschemes'
+
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
@@ -62,7 +63,8 @@ end
 let mapleader = " "
 nnoremap s <nop>
 let maplocalleader = "s"
-colo solarized
+colo gruvbox
+let &bg='dark'
 " colo solarized
 set nocompatible
 " not to enable modeline for security
