@@ -217,9 +217,10 @@ function! FormatJson()
 endfunction
 
 function RandomColorScheme()
-  let mycolors = split(globpath(&rtp,"**/colors/*.vim"),"\n") 
-  exe 'so ' . mycolors[localtime() % len(mycolors)]
-  unlet mycolors
+  let l:colors = split(globpath(&rtp,"**/colors/*.vim"),"\n") 
+  let l:color = l:colors[localtime() % len(l:colors)]
+  let l:cname = split(split(l:color, "/")[-1], "\\.")[0]
+  exe 'colorscheme ' . l:cname
 endfunction
 
 " quick git command
