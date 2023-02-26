@@ -126,11 +126,11 @@ function! FoldText()
 endfunction
 set foldtext=FoldText()
 
-hi Pmenu ctermbg=grey
-hi PmenuSel ctermfg=darkgrey
-hi TabLine ctermfg=Grey ctermbg=Black
-hi TabLineSel ctermfg=Red ctermbg=Yellow
-hi TabLineFill ctermfg=DarkGrey ctermbg=DarkGrey
+" hi Pmenu ctermbg=grey
+" hi PmenuSel ctermfg=darkgrey
+" hi TabLine ctermfg=Grey ctermbg=Black
+" hi TabLineSel ctermfg=Red ctermbg=Yellow
+" hi TabLineFill ctermfg=DarkGrey ctermbg=DarkGrey
 
 "My surround.
 function! AddParenthese(place)
