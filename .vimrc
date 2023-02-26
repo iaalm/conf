@@ -233,4 +233,4 @@ command! -nargs=0 ToggleDark :let &bg=(&bg=='light'?'dark':'light')
 command! -nargs=0 LCD :lcd %:p:h
 command! -nargs=0 THEX :%!xxd
 command! -nargs=0 FHEX :%!xxd -r
-command NewColor call RandomColorScheme()
+command RandomColor call RandomColorScheme()
