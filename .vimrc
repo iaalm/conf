@@ -156,7 +156,7 @@ nnoremap <leader>r :Sessions<CR>
 nnoremap <leader>f :Rg <C-R><C-W><CR>
 vnoremap <leader>f y:Rg <C-R>"<CR>
 nnoremap <leader>g :vertical botright Git<CR>
-nnoremap <leader>c gg"+yG<C-o><C-o>
+nnoremap <leader>c gg"+yG
 nnoremap <leader>yf :let @+ = expand("%")<CR>
 nnoremap <leader>yp :let @+ = expand("%:p")<CR>
 nnoremap <C-p> :Files<CR>
