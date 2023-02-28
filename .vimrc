@@ -159,7 +159,7 @@ nnoremap <leader>g :vertical botright Git<CR>
 nnoremap <leader>c gg"+yG
 nnoremap <leader>yf :let @+ = expand("%")<CR>
 nnoremap <leader>yp :let @+ = expand("%:p")<CR>
-nnoremap <C-p> :Files<CR>
+nnoremap <C-p> :GFiles<CR>
 
 " it seems a good idea to default no fold
 set foldlevel=20
