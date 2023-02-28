@@ -103,6 +103,7 @@ syntax enable
 syntax on
 set foldmethod=syntax
 " set foldcolumn=2
+set tags+=tags
 
 " better fold display
 function! FoldText()
