@@ -235,3 +235,4 @@ command! -nargs=0 LCD :lcd %:p:h
 command! -nargs=0 THEX :%!xxd
 command! -nargs=0 FHEX :%!xxd -r
 command RandomColor call RandomColorScheme()
+command BuildTags :!git ls-tree --full-tree --name-only -r HEAD | ctags -L -
