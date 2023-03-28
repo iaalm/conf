@@ -225,8 +225,8 @@ function RandomColorScheme()
 endfunction
 
 " quick git command
-command! -nargs=0 GGPush :execute ":Git! push -u origin " . fugitive#head(0)
-command! -nargs=0 GGPull :execute ":Git! pull origin " . fugitive#head(0)
+command! -nargs=0 GGPush :execute ":Git! push -u origin " . FugitiveHead()
+command! -nargs=0 GGPull :execute ":Git! pull origin " . FugitiveHead()
 
 command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
 command! -nargs=0 ToggleVerbose :execute "call ToggleVerbose()"
