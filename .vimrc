@@ -24,6 +24,7 @@ Plug 'itchyny/lightline.vim', { 'for': 'cs' }
 Plug 'tpope/vim-fugitive'
 " logfile highlight
 Plug 'mtdl9/vim-log-highlighting'
+Plug 'MattesGroeger/vim-bookmarks'
 " JSX
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -161,6 +162,19 @@ nnoremap <leader>c gg"+yG
 nnoremap <leader>yf :let @+ = expand("%")<CR>
 nnoremap <leader>yp :let @+ = expand("%:p")<CR>
 nnoremap <C-p> :GFiles<CR>
+
+" vim bookmark plugins
+let g:bookmark_no_default_key_mappings = 1
+let g:bookmark_sign = '>'
+let g:bookmark_annotation_sign = '#'	
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+let g:bookmark_center = 1
+nmap <Leader>mm <Plug>BookmarkToggle
+nmap <Leader>mi <Plug>BookmarkAnnotate
+nmap <Leader>ma <Plug>BookmarkShowAll
+nmap <Leader>mn <Plug>BookmarkNext
+nmap <Leader>mp <Plug>BookmarkPrev
 
 " it seems a good idea to default no fold
 set foldlevel=20
