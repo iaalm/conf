@@ -150,6 +150,7 @@ endfunction
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
 " leaders
+nno \ :
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :nohlsearch<CR>
 nnoremap <leader>p :Commands<CR>
