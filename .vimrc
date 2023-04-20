@@ -45,7 +45,6 @@ if has("mac")
 elseif has("win32") || has("win64") "all Windows, ie win32,win64
     vnoremap <C-c> "+y
     " terminal ctrl-v
-    tnoremap <Esc> <C-w>N
     autocmd TerminalOpen * setlocal nonumber
     " use powershell
     set shell=powershell\ -NoProfile
@@ -62,8 +61,8 @@ end
 
 " settings
 let mapleader = " "
-nnoremap s <nop>
-let maplocalleader = "s"
+let maplocalleader = "\\"
+nno s :
 colo gruvbox
 let &bg='dark'
 " colo solarized
@@ -150,7 +149,6 @@ endfunction
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
 " leaders
-nno \ :
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :nohlsearch<CR>
 nnoremap <leader>p :Commands<CR>
@@ -194,7 +192,7 @@ autocmd FileType cs let g:lightline = {
 \   'right': [['lineinfo'], ['percent'], ['sharpenup']]
 \ },
 \ 'component': {
-\   'prefixHint': 'sos',
+\   'prefixHint': '\\os',
 \   'sharpenup': sharpenup#statusline#Build()
 \ }
 \}
