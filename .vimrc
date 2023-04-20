@@ -45,7 +45,6 @@ if has("mac")
 elseif has("win32") || has("win64") "all Windows, ie win32,win64
     vnoremap <C-c> "+y
     " terminal ctrl-v
-    autocmd TerminalOpen * setlocal nonumber
     " use powershell
     set shell=powershell\ -NoProfile
     set shellcmdflag=\ -c
@@ -180,6 +179,9 @@ nmap <Leader>mp <Plug>BookmarkPrev
 " it seems a good idea to default no fold
 set foldlevel=20
 set sessionoptions-=buffers sessionoptions-=folds
+
+" terminal
+autocmd TerminalOpen * setlocal nonumber norelativenumber
 
 " C sharp
 autocmd FileType cs set laststatus=2
