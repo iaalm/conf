@@ -62,7 +62,8 @@ end
 " settings
 let mapleader = " "
 let maplocalleader = "\\"
-nno s :
+
+nnoremap s :
 colo gruvbox
 let &bg='dark'
 " colo solarized
