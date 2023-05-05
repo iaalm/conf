@@ -104,6 +104,7 @@ syntax on
 set foldmethod=syntax
 " set foldcolumn=2
 set tags+=tags
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
 " better fold display
 function! FoldText()
