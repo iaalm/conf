@@ -253,4 +253,6 @@ command! -nargs=0 LCD :lcd %:p:h
 command! -nargs=0 THEX :%!xxd
 command! -nargs=0 FHEX :%!xxd -r
 command RandomColor call RandomColorScheme()
-command BuildTags :!git ls-tree --full-tree --name-only -r HEAD | ctags -L -
+command TagsBuild :!git ls-tree --full-tree --name-only -r HEAD | ctags -L -
+command -nargs=1 TagsAdd :!ctags -a -R "<args>"
+command -nargs=0 TagsDel :call delete('tags')
