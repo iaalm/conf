@@ -244,6 +244,7 @@ endfunction
 
 " quick git command
 command! -nargs=0 GGPush :execute ":Git! push -u origin " . FugitiveHead()
+command! -bang -nargs=0 GGPush :execute ":Git! push --no-verify -u origin " . FugitiveHead()
 command! -nargs=0 GGPull :execute ":Git! pull origin " . FugitiveHead()
 
 command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
