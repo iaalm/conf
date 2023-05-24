@@ -242,9 +242,16 @@ function RandomColorScheme()
   exe 'colorscheme ' . l:cname
 endfunction
 
+function GitPush(bang)
+  let l:p = " "
+  if a:bang == "!"
+    let l:p = " --no-verify"
+  endif
+  :execute ":Git! push" . l:p ." -u origin " . FugitiveHead()
+endfunction
+
 " quick git command
-command! -nargs=0 GGPush :execute ":Git! push -u origin " . FugitiveHead()
-command! -bang -nargs=0 GGPush :execute ":Git! push --no-verify -u origin " . FugitiveHead()
+command! -bang -nargs=0 GGPush call GitPush("<bang>")
 command! -nargs=0 GGPull :execute ":Git! pull origin " . FugitiveHead()
 
 command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
