@@ -63,7 +63,11 @@ let mapleader = " "
 let maplocalleader = "\\"
 
 nnoremap s :
-colo gruvbox
+if has("gui_running")
+    colo gruvbox
+else
+    colo blue
+endif
 let &bg='dark'
 " colo solarized
 set nocompatible
