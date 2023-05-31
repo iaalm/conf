@@ -44,13 +44,12 @@ if has("mac")
     "Mac
 elseif has("win32") || has("win64") "all Windows, ie win32,win64
     vnoremap <C-c> "+y
-    " terminal ctrl-v
-    " use powershell
-    set shell=powershell\ -NoProfile
-    set shellcmdflag=\ -c
-    set shellquote=\"
-    set shellxquote= 
     tmap <LeftMouse> <C-w>N
+    " use powershell
+    " set shell=powershell\ -NoProfile
+    " set shellcmdflag=\ -c
+    " set shellquote=\"
+    " set shellxquote= 
 elseif has("win32unix")
     "Cygwin
 elseif has("bsd")
