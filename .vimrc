@@ -162,7 +162,9 @@ nnoremap <leader>r :Sessions<CR>
 " toggle backgroud between light and dark
 nnoremap <leader>f :Rg <C-R><C-W><CR>
 vnoremap <leader>f y:Rg <C-R>"<CR>
-nnoremap <leader>g :vertical botright Git<CR>
+nnoremap <leader>g :G<CR><C-W>10_
+nnoremap <leader>t :term<CR><C-W>15_
+"nnoremap <leader>g :vertical botright Git<CR>
 nnoremap <leader>c gg"+yG
 nnoremap <leader>yf :let @+ = expand("%")<CR>
 nnoremap <leader>yp :let @+ = expand("%:p")<CR>
