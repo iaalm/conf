@@ -257,6 +257,31 @@ function GitPush(bang)
   :execute ":Git! push" . l:p ." -u origin " . FugitiveHead()
 endfunction
 
+" maybe make a plugin for it?
+" inspired by https://gist.github.com/shivamashtikar/16a4d7b83b743c9619e29b47a66138e0
+function Term() abort
+  let termNums = term_list()
+  let termWins = map(filter(getwininfo(), 'v:val.terminal'), 'v:val.winnr')
+  let hiddenNums = map(getbufinfo({'hidden': 1}), 'v:val.bufnr')
+  let currentBufNum = bufnr('%')
+  if index(termNums, currentBufNum) >= 0
+      " current buffer is terminal, hide it
+      execute 'hid'
+  elseif len(termWins) > 0
+      " there is a terminal buffer, show it
+      execute termWins[0] . 'wincmd w'
+  elseif len(termNums) > 0
+      " the terminal buffer is hidden, show it
+      execute 'sb ' . termNums[0]
+  else
+      " no terminal buffer, create one
+      execute 'term'
+  endif
+endfunction
+command! -bang -nargs=* Term call Term()
+map <C-t> :Term<CR>
+tmap <C-t> <C-w>:Term<CR>
+
 " quick git command
 command! -bang -nargs=0 GGPush call GitPush("<bang>")
 command! -nargs=0 GGPull :execute ":Git! pull origin " . FugitiveHead()
