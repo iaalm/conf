@@ -28,6 +28,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 " JSX
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'github/copilot.vim'
 " Python
 Plug 'tmhedberg/SimpylFold'
 if has("win32") || has("win64")
