@@ -48,6 +48,7 @@ elseif has("win32") || has("win64") "all Windows, ie win32,win64
     vnoremap <C-c> "+y
     tmap <LeftMouse> <C-w>N
     " use powershell
+    let g:terminal_drawer_shell="powershell"
     " set shell=powershell\ -NoProfile
     " set shellcmdflag=\ -c
     " set shellquote=\"
