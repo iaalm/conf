@@ -44,6 +44,8 @@ set bg=light
 " OS specific setting
 if has("mac")
     "Mac
+    " use option key as meta
+    set macmeta
 elseif has("win32") || has("win64") "all Windows, ie win32,win64
     vnoremap <C-c> "+y
     tmap <LeftMouse> <C-w>N
