@@ -163,8 +163,8 @@ vnoremap ) :call AddParenthese(1)<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :nohlsearch<CR>
 nnoremap <leader>p :Commands<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>N :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
+nnoremap <leader>N :NERDTreeToggle<CR>
 nnoremap <leader>r :Sessions<CR>
 " toggle backgroud between light and dark
 nnoremap <leader>f :Rg <C-R><C-W><CR>
