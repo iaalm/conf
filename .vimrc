@@ -277,3 +277,4 @@ command RandomColor call RandomColorScheme()
 command TagsBuild :!git ls-tree --full-tree --name-only -r HEAD | ctags -L -
 command -nargs=1 TagsAdd :!ctags -a -R "<args>"
 command -nargs=0 TagsDel :call delete('tags')
+command -nargs=0 NUM :set number relativenumber
