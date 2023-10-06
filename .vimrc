@@ -116,6 +116,11 @@ set foldmethod=syntax
 set tags+=tags
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
+" fix vim slow while open big file
+" https://vi.stackexchange.com/questions/5128/matchpairs-makes-vim-slow
+let g:matchparen_timeout = 2
+let g:matchparen_insert_timeout = 2
+
 " better fold display
 function! FoldText()
     let line = getline(v:foldstart)
