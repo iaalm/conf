@@ -27,11 +27,14 @@ Plug 'tpope/vim-fugitive'
 " logfile highlight
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'MattesGroeger/vim-bookmarks'
+" Python
+Plug 'tmhedberg/SimpylFold'
 " JSX
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
-" Python
-Plug 'tmhedberg/SimpylFold'
+" TS
+Plug 'leafgarland/typescript-vim'
+" C# and Powershell
 if has("win32") || has("win64")
     Plug 'OmniSharp/omnisharp-vim'
     Plug 'nickspoons/vim-sharpenup'
