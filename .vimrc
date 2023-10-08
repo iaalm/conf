@@ -29,6 +29,8 @@ Plug 'mtdl9/vim-log-highlighting'
 Plug 'MattesGroeger/vim-bookmarks'
 " Python
 Plug 'tmhedberg/SimpylFold'
+Plug 'jmcantrell/vim-virtualenv'
+let g:virtualenv_directory="."
 " JSX
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
