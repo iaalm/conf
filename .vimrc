@@ -143,6 +143,7 @@ set foldmethod=syntax
 " set foldcolumn=2
 set tags+=tags
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+set signcolumn=number
 
 " fix vim slow while open big file
 " https://vi.stackexchange.com/questions/5128/matchpairs-makes-vim-slow
