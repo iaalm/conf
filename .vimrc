@@ -248,14 +248,11 @@ autocmd FileType cs let g:lightline = {
 \ }
 \}
 
-" Java
-autocmd FileType java set foldlevel=1    " display namespace - class - function
-
 " Json
 autocmd FileType json set foldlevel=20
 
 " JavaScript
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
+autocmd FileType javascript,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
 
 " Windows projects
 autocmd BufNewFile,BufRead *.proj set filetype=xml
