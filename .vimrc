@@ -38,8 +38,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 " C# and Powershell
 if has("win32") || has("win64")
-    Plug 'OmniSharp/omnisharp-vim'
-    Plug 'nickspoons/vim-sharpenup'
     Plug 'pprovost/vim-ps1'
 
     " COC
@@ -241,14 +239,12 @@ autocmd FileType cs set laststatus=2
 autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
 autocmd FileType cs let g:lightline = {
 \ 'active': {
-\   'right': [['prefixHint'], ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype', 'sharpenup']]
+\   'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
 \ },
 \ 'inactive': {
-\   'right': [['lineinfo'], ['percent'], ['sharpenup']]
+\   'right': [['lineinfo'], ['percent']]
 \ },
 \ 'component': {
-\   'prefixHint': '\\os',
-\   'sharpenup': sharpenup#statusline#Build()
 \ }
 \}
 
