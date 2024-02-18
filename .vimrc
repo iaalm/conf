@@ -127,6 +127,7 @@ set smarttab
 set complete-=i
 " show search [x/y] indicate
 set shortmess-=S
+set jumpoptions=stack
 
 set list
 " Display cwd on title
