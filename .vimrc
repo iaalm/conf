@@ -228,11 +228,11 @@ set foldlevel=20
 set sessionoptions-=buffers sessionoptions-=folds
 
 " terminal
-if has('nvim')
-    autocmd TermOpen * setlocal nonumber norelativenumber
-else
-    autocmd TerminalOpen * setlocal nonumber norelativenumber
-endif
+" if has('nvim')
+"     autocmd TermOpen * setlocal nonumber norelativenumber
+" else
+"     autocmd TerminalOpen * setlocal nonumber norelativenumber
+" endif
 
 " C sharp
 autocmd FileType cs set laststatus=2
