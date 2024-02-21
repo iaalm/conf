@@ -1,6 +1,7 @@
 let mapleader = " "
 let maplocalleader = "s"
 nnoremap \ :
+" '-' is another mapable key
 
 call plug#begin()
 " color schema
