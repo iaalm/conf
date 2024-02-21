@@ -7,6 +7,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'github/copilot.vim'
 Plug 'iaalm/terminal-drawer.vim'
 Plug 'luochen1990/rainbow'
+Plug 'liuchengxu/vim-which-key'
 let g:rainbow_active = 1
 
 Plug 'preservim/nerdtree'
@@ -193,21 +194,35 @@ endfunction
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
 " leaders
-nnoremap <leader>q :q<CR>
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+let g:which_key_map = {}
+let g:which_key_map.s = 'nohlsearch'
 nnoremap <leader>s :nohlsearch<CR>
+let g:which_key_map.p = ':Commands'
 nnoremap <leader>p :Commands<CR>
+let g:which_key_map.n = 'Find in NERDTree'
 nnoremap <leader>n :NERDTreeFind<CR>
+let g:which_key_map.N = 'Toogle NERDTree'
 nnoremap <leader>N :NERDTreeToggle<CR>
+let g:which_key_map.r = 'Load session'
 nnoremap <leader>r :Sessions<CR>
 " toggle backgroud between light and dark
+let g:which_key_map.f = 'Rg search'
 nnoremap <leader>f :Rg <C-R><C-W><CR>
 vnoremap <leader>f y:Rg <C-R>"<CR>
+let g:which_key_map.g = 'Git'
 nnoremap <leader>g :G<CR><C-W>10_
+let g:which_key_map.t = 'Terminal'
 nnoremap <leader>t :term<CR><C-W>15_
 "nnoremap <leader>g :vertical botright Git<CR>
-nnoremap <leader>c gg"+yG
+let g:which_key_map.y = { 'name': '+Copy'}
+let g:which_key_map.y.f = 'Copy file name'
 nnoremap <leader>yf :let @+ = expand("%")<CR>
+let g:which_key_map.y.p = 'Copy file path'
 nnoremap <leader>yp :let @+ = expand("%:p")<CR>
+let g:which_key_map.y.c = 'Copy All content'
+nnoremap <leader>yc gg"+yG
 nnoremap <C-p> :GFiles<CR>
 
 " vim bookmark plugins
@@ -217,11 +232,13 @@ let g:bookmark_annotation_sign = '#'
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
 let g:bookmark_center = 1
+let g:which_key_map.m = { 'name': '+Bookmark'}
 nmap <Leader>mm <Plug>BookmarkToggle
 nmap <Leader>mi <Plug>BookmarkAnnotate
 nmap <Leader>ma <Plug>BookmarkShowAll
 nmap <Leader>mn <Plug>BookmarkNext
 nmap <Leader>mp <Plug>BookmarkPrev
+call which_key#register('<Space>', "g:which_key_map")
 
 " it seems a good idea to default no fold
 set foldlevel=20
