@@ -1,3 +1,7 @@
+let mapleader = " "
+let maplocalleader = "s"
+nnoremap \ :
+
 call plug#begin()
 " color schema
 Plug 'altercation/vim-colors-solarized'
@@ -7,8 +11,9 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'github/copilot.vim'
 Plug 'iaalm/terminal-drawer.vim'
 Plug 'luochen1990/rainbow'
-Plug 'liuchengxu/vim-which-key'
 let g:rainbow_active = 1
+Plug 'liuchengxu/vim-which-key'
+let g:which_key_map = {}
 
 Plug 'preservim/nerdtree'
 " Easy motion
@@ -63,6 +68,37 @@ if has("win32") || has("win64")
         call feedkeys('K', 'in')
       endif
     endfunction
+
+    " other mapping
+    " Symbol renaming
+    let g:which_key_map.c = { 'name': '+CoC'}
+    nmap <leader>cR :CocRestart<CR>
+    nmap <leader>cr <Plug>(coc-rename)
+
+    " Formatting selected code
+    xmap <leader>cf  <Plug>(coc-format-selected)
+    nmap <leader>cf  <Plug>(coc-format-selected)
+
+    " Applying code actions to the selected code block
+    " Example: `<leader>aap` for current paragraph
+    xmap <leader>ca  <Plug>(coc-codeaction-selected)
+    nmap <leader>ca  <Plug>(coc-codeaction-selected)
+
+    " Remap keys for applying code actions at the cursor position
+    nmap <leader>cc  <Plug>(coc-codeaction-cursor)
+    " Remap keys for apply code actions affect whole buffer
+    nmap <leader>cs  <Plug>(coc-codeaction-source)
+    " Apply the most preferred quickfix action to fix diagnostic on the current line
+    nmap <leader>cq  <Plug>(coc-fix-current)
+
+    " Remap keys for applying refactor code actions
+    nmap <silent> <leader>ce <Plug>(coc-codeaction-refactor)
+    xmap <silent> <leader>cr  <Plug>(coc-codeaction-refactor-selected)
+    nmap <silent> <leader>cr  <Plug>(coc-codeaction-refactor-selected)
+    " Run the Code Lens action on the current line
+    nmap <leader>cl  <Plug>(coc-codelens-action)
+    " Add `:Format` command to format current buffer
+    nmap <leader>cF :call CocActionAsync('format')<CR>
 end
 call plug#end()
 set bg=light
@@ -91,10 +127,6 @@ elseif has("linux")
 end
 
 " settings
-let mapleader = " "
-let maplocalleader = "s"
-
-nnoremap \ :
 if has("gui_running")
     colo gruvbox
 else
@@ -196,7 +228,6 @@ vnoremap ) :call AddParenthese(1)<CR>
 " leaders
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-let g:which_key_map = {}
 let g:which_key_map.s = 'nohlsearch'
 nnoremap <leader>s :nohlsearch<CR>
 let g:which_key_map.p = ':Commands'
@@ -213,8 +244,6 @@ nnoremap <leader>f :Rg <C-R><C-W><CR>
 vnoremap <leader>f y:Rg <C-R>"<CR>
 let g:which_key_map.g = 'Git'
 nnoremap <leader>g :G<CR><C-W>10_
-let g:which_key_map.t = 'Terminal'
-nnoremap <leader>t :term<CR><C-W>15_
 "nnoremap <leader>g :vertical botright Git<CR>
 let g:which_key_map.y = { 'name': '+Copy'}
 let g:which_key_map.y.f = 'Copy file name'
@@ -238,7 +267,6 @@ nmap <Leader>mi <Plug>BookmarkAnnotate
 nmap <Leader>ma <Plug>BookmarkShowAll
 nmap <Leader>mn <Plug>BookmarkNext
 nmap <Leader>mp <Plug>BookmarkPrev
-call which_key#register('<Space>', "g:which_key_map")
 
 " it seems a good idea to default no fold
 set foldlevel=20
@@ -313,17 +341,30 @@ function GitPush(bang)
 endfunction
 
 " quick git command
+let g:which_key_map.x = { 'name': '+Miscellaneous'}
 command! -bang -nargs=0 GGPush call GitPush("<bang>")
 command! -nargs=0 GGPull :execute ":Git! pull origin " . FugitiveHead()
-
 command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
+nmap <Leader>xr :ReloadConfig<CR>
 command! -nargs=0 ToggleVerbose :execute "call ToggleVerbose()"
+nmap <Leader>xv :ToggleVerbose<CR>
 command! -nargs=0 ToggleDark :let &bg=(&bg=='light'?'dark':'light')
+nmap <Leader>xd :ToggleDark<CR>
 command! -nargs=0 LCD :lcd %:p:h
+nmap <Leader>xc :LCD<CR>
 command! -nargs=0 THEX :%!xxd
+nmap <Leader>xh :THEX<CR>
 command! -nargs=0 FHEX :%!xxd -r
+nmap <Leader>xH :FHEX<CR>
 command RandomColor call RandomColorScheme()
-command TagsBuild :!git ls-tree --full-tree --name-only -r HEAD | ctags -L -
-command -nargs=1 TagsAdd :!ctags -a -R "<args>"
-command -nargs=0 TagsDel :call delete('tags')
+nmap <Leader>xt :RandomColor<CR>
 command -nargs=0 NUM :set number relativenumber
+nmap <Leader>xn :NUM<CR>
+let g:which_key_map.t = { 'name': '+Tags'}
+command TagsBuild :!git ls-tree --full-tree --name-only -r HEAD | ctags -L -
+nmap <Leader>tb :TagsBuild<CR>
+command -nargs=1 TagsAdd :!ctags -a -R "<args>"
+nmap <Leader>ta :TagsAdd<CR>
+command -nargs=0 TagsDel :call delete('tags')
+nmap <Leader>td :TagsDel<CR>
+call which_key#register('<Space>', "g:which_key_map")
