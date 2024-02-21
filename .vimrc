@@ -92,9 +92,9 @@ end
 
 " settings
 let mapleader = " "
-let maplocalleader = "\\"
+let maplocalleader = "s"
 
-nnoremap s :
+nnoremap \ :
 if has("gui_running")
     colo gruvbox
 else
