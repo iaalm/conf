@@ -357,6 +357,8 @@ command! -nargs=0 THEX :%!xxd
 nmap <Leader>xh :THEX<CR>
 command! -nargs=0 FHEX :%!xxd -r
 nmap <Leader>xH :FHEX<CR>
+command GitAddSafeDir :execute 'G! config --global --add safe.directory ' . join(split(getcwd(), '\\'), '/')
+nmap <Leader>xs :GitAddSafeDir<CR>
 command RandomColor call RandomColorScheme()
 nmap <Leader>xt :RandomColor<CR>
 command -nargs=0 NUM :set number relativenumber
