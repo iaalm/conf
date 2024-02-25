@@ -311,6 +311,9 @@ autocmd BufNewFile,BufRead *.sfproj set filetype=xml
 autocmd BufNewFile,BufRead *.props set filetype=xml
 autocmd BufNewFile,BufRead *.targets set filetype=xml
 
+" Auto close git on leave focus
+autocmd BufLeave fugitive://* q
+
 " Vim verbose log
 " the log is very "verbose", so not using hidden file to notice myself to
 " delete it
