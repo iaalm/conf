@@ -17,6 +17,7 @@ Plug 'liuchengxu/vim-which-key'
 let g:which_key_map = {}
 
 Plug 'preservim/nerdtree'
+let NERDTreeQuitOnOpen=1
 " Easy motion
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
