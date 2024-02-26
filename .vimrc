@@ -248,9 +248,9 @@ let g:which_key_map.g = 'Git'
 nnoremap <leader>g :G<CR><C-W>10_
 "nnoremap <leader>g :vertical botright Git<CR>
 let g:which_key_map.y = { 'name': '+Copy'}
-let g:which_key_map.y.f = 'Copy file name'
+let g:which_key_map.y.f = 'Copy relative path'
 nnoremap <leader>yf :let @+ = expand("%")<CR>
-let g:which_key_map.y.p = 'Copy file path'
+let g:which_key_map.y.p = 'Copy absolute path'
 nnoremap <leader>yp :let @+ = expand("%:p")<CR>
 let g:which_key_map.y.c = 'Copy All content'
 nnoremap <leader>yc gg"+yG
