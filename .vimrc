@@ -311,8 +311,9 @@ autocmd BufNewFile,BufRead *.sfproj set filetype=xml
 autocmd BufNewFile,BufRead *.props set filetype=xml
 autocmd BufNewFile,BufRead *.targets set filetype=xml
 
-" Auto close git on leave focus
+" Auto close git/NERDTree on leave focus
 autocmd BufLeave fugitive://* q
+autocmd BufLeave NERD_tree_* silent! :NERDTreeClose
 
 " Vim verbose log
 " the log is very "verbose", so not using hidden file to notice myself to
