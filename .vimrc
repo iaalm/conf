@@ -376,3 +376,5 @@ nmap <Leader>ta :TagsAdd<CR>
 command -nargs=0 TagsDel :call delete('tags')
 nmap <Leader>td :TagsDel<CR>
 call which_key#register('<Space>', "g:which_key_map")
+
+autocmd Syntax * syn region regionComment start='[ \t]*\(#\|//\) region' end='[ \t]*\(#\|//\) endregion' transparent fold keepend extend
