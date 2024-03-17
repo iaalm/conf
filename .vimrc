@@ -1,11 +1,11 @@
-# region leaders
+"# region leaders
 let mapleader = " "
 let maplocalleader = "s"
 nnoremap \ :
 " '-' is another mapable key
-# endregion
+"# endregion
 
-# region vim-plug
+"# region vim-plug
 call plug#begin()
 " color schema
 Plug 'altercation/vim-colors-solarized'
@@ -51,7 +51,7 @@ Plug 'leafgarland/typescript-vim'
 if has("win32") || has("win64")
     Plug 'pprovost/vim-ps1'
 
-    # region COC
+    "# region COC
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Make <CR> to accept selected completion item or notify coc.nvim to format
     " <C-g>u breaks current undo, please make your own choice
@@ -104,13 +104,13 @@ if has("win32") || has("win64")
     nmap <leader>cl  <Plug>(coc-codelens-action)
     " Add `:Format` command to format current buffer
     nmap <leader>cF :call CocActionAsync('format')<CR>
-    # endregion
+    "# endregion
 end
 call plug#end()
 set bg=light
-# endregion vim-plug
+"# endregion vim-plug
 
-# region OS specific setting
+"# region OS specific setting
 if has("mac")
     "Mac
     " use option key as meta
@@ -131,9 +131,9 @@ elseif has("bsd")
 elseif has("linux")
     "Linux
 end
-# endregion
+"# endregion
 
-# region "set" settings
+"# region "set" settings
 if has("gui_running")
     colo gruvbox
 else
@@ -188,15 +188,15 @@ set signcolumn=number
 set foldlevel=20
 set sessionoptions-=buffers sessionoptions-=folds
 
-# endregion
+"# endregion
 
-# region fix for vim slow while open big file
+"# region fix for vim slow while open big file
 " https://vi.stackexchange.com/questions/5128/matchpairs-makes-vim-slow
 let g:matchparen_timeout = 2
 let g:matchparen_insert_timeout = 2
-# endregion
+"# endregion
 
-# region better fold display
+"# region better fold display
 function! FoldText()
     let line = getline(v:foldstart)
     let foldedlinecount = v:foldend - v:foldstart
@@ -217,17 +217,17 @@ function! FoldText()
     return line . " " . repeat("-", fillcharcount) . " " . foldedlinecount
 endfunction
 set foldtext=FoldText()
-# endregion
+"# endregion
 
-# region help bar color
+"# region help bar color
 " hi Pmenu ctermbg=grey
 " hi PmenuSel ctermfg=darkgrey
 " hi TabLine ctermfg=Grey ctermbg=Black
 " hi TabLineSel ctermfg=Red ctermbg=Yellow
 " hi TabLineFill ctermfg=DarkGrey ctermbg=DarkGrey
-# endregion
+"# endregion
 
-# region My surround.
+"# region My surround.
 function! AddParenthese(place)
     let [lnum_start, cnum_start] = getpos("'<")[1:2]
     let [lnum_end, cnum_end] = getpos("'>")[1:2]
@@ -242,9 +242,9 @@ endfunction
 " select and add () around it
 vnoremap ( :call AddParenthese(0)<CR>
 vnoremap ) :call AddParenthese(1)<CR>
-# endregion
+"# endregion
 
-# region leaders
+"# region leaders
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 let g:which_key_map.s = 'nohlsearch'
@@ -272,9 +272,9 @@ nnoremap <leader>yp :let @+ = expand("%:p")<CR>
 let g:which_key_map.y.c = 'Copy All content'
 nnoremap <leader>yc gg"+yG
 nnoremap <C-p> :GFiles<CR>
-# endregion
+"# endregion
 
-# region vim bookmark plugins
+"# region vim bookmark plugins
 let g:bookmark_no_default_key_mappings = 1
 let g:bookmark_sign = '>'
 let g:bookmark_annotation_sign = '#'	
@@ -287,17 +287,17 @@ nmap <Leader>mi <Plug>BookmarkAnnotate
 nmap <Leader>ma <Plug>BookmarkShowAll
 nmap <Leader>mn <Plug>BookmarkNext
 nmap <Leader>mp <Plug>BookmarkPrev
-# endregion
+"# endregion
 
-# region terminal
+"# region terminal
 " if has('nvim')
 "     autocmd TermOpen * setlocal nonumber norelativenumber
 " else
 "     autocmd TerminalOpen * setlocal nonumber norelativenumber
 " endif
-# endregion
+"# endregion
 
-# region language specific settings
+"# region language specific settings
 " C sharp
 autocmd FileType cs set laststatus=2
 " autocmd FileType cs set foldlevel=2    " display namespace - class - function
@@ -318,9 +318,9 @@ autocmd FileType json set foldlevel=20
 
 " JavaScript
 autocmd FileType javascript,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
-# endregion
+"# endregion
 
-# region Windows projects
+"# region Windows projects
 autocmd BufNewFile,BufRead *.proj set filetype=xml
 autocmd BufNewFile,BufRead *.csproj set filetype=xml
 autocmd BufNewFile,BufRead *.vcxproj set filetype=xml
@@ -328,15 +328,15 @@ autocmd BufNewFile,BufRead *.nuproj set filetype=xml
 autocmd BufNewFile,BufRead *.sfproj set filetype=xml
 autocmd BufNewFile,BufRead *.props set filetype=xml
 autocmd BufNewFile,BufRead *.targets set filetype=xml
-# endregion
+"# endregion
 
-# region auto close windows
+"# region auto close windows
 " Auto close git/NERDTree on leave focus
 " autocmd BufLeave fugitive://* q
 " autocmd BufLeave NERD_tree_* silent! :NERDTreeClose
-# endregion
+"# endregion
 
-# region Misc functions
+"# region Misc functions
 " Vim verbose log
 " the log is very "verbose", so not using hidden file to notice myself to
 " delete it
@@ -367,9 +367,9 @@ function GitPush(bang)
   endif
   :execute ":Git! push" . l:p ." -u origin " . FugitiveHead()
 endfunction
-# endregion
+"# endregion
 
-# region quick git command
+"# region quick git command
 let g:which_key_map.x = { 'name': '+Miscellaneous'}
 command! -bang -nargs=0 GGPush call GitPush("<bang>")
 command! -nargs=0 GGPull :execute ":Git! pull origin " . FugitiveHead()
@@ -399,11 +399,11 @@ nmap <Leader>ta :TagsAdd<CR>
 command -nargs=0 TagsDel :call delete('tags')
 nmap <Leader>td :TagsDel<CR>
 call which_key#register('<Space>', "g:which_key_map")
-# endregion
+"# endregion
 
-# region region comment fold
-autocmd Syntax * syn region regionComment start='[ \t]*\(#\|//\|//#\|/* #\) \?region' end='[ \t]*\(#\|//\|//#\|/* #\) \?endregion' transparent fold keepend extend
-# endregion
+"# region region comment fold
+autocmd Syntax * syn region regionComment start='[ \t]*\(#\|//\|//#\|/* #\|"#\) \?region' end='[ \t]*\(#\|//\|//#\|/* #\|"#\) \?endregion' transparent fold keepend extend
+"# endregion
 
-# modelines
-# vim: set foldlevel=0:
+" modelines
+" vim: set foldlevel=0:
