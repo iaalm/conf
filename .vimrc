@@ -145,8 +145,8 @@ set nocompatible
 " not to enable modeline for security
 " set modeline
 " because number and relativenumber is local to window, use setg here
-setg number
-setg relativenumber
+" setg number
+" setg relativenumber
 set ruler
 set cursorline
 set wildmenu
