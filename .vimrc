@@ -162,6 +162,8 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set smarttab
+" always show statusline
+set laststatus=2
 " complete not search current dir
 set complete-=i
 " show search [x/y] indicate
@@ -298,7 +300,6 @@ nmap <Leader>mp <Plug>BookmarkPrev
 
 "# region language specific settings
 " C sharp
-autocmd FileType cs set laststatus=2
 " autocmd FileType cs set foldlevel=2    " display namespace - class - function
 autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
 autocmd FileType cs let g:lightline = {
