@@ -33,7 +33,6 @@ Plug 'airblade/vim-rooter'
 let g:rooter_patterns = ['.git']
 " git
 Plug 'itchyny/lightline.vim', { 'for': 'cs' }
-"set laststatus=2
 Plug 'tpope/vim-fugitive'
 " logfile highlight
 Plug 'mtdl9/vim-log-highlighting'
@@ -391,6 +390,8 @@ command RandomColor call RandomColorScheme()
 nmap <Leader>xt :RandomColor<CR>
 command -nargs=0 NUM :set number relativenumber
 nmap <Leader>xn :NUM<CR>
+command -nargs=0 INFO :echo '#buffer: ' . bufnr('%') . ', #window: ' . winnr() . ', filetype: ' . &filetype
+nmap <Leader>xi :INFO<CR>
 let g:which_key_map.t = { 'name': '+Tags'}
 command TagsBuild :!git ls-tree --full-tree --name-only -r HEAD | ctags -L -
 nmap <Leader>tb :TagsBuild<CR>
