@@ -50,7 +50,9 @@ Plug 'leafgarland/typescript-vim'
 if has("win32") || has("win64")
     Plug 'pprovost/vim-ps1'
 
+ "# region
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ "# endregion
     " Make <CR> to accept selected completion item or notify coc.nvim to format
     " <C-g>u breaks current undo, please make your own choice
     inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
@@ -403,7 +405,7 @@ call which_key#register('<Space>', "g:which_key_map")
 "# endregion
 
 "# region region comment fold
-autocmd Syntax * syn region regionComment start='\(#\|//\|//#\|/* #\|"#\) \?region' end='\(#\|//\|//#\|/* #\|"#\) \?endregion' transparent fold keepend extend
+autocmd Syntax * syn region regionComment start='^[ \t]*\(#\|//\|//#\|/\* #\|"#\) \?region' end='^[ \t]*\(#\|//\|//#\|/\* #\|"#\) \?endregion' transparent fold keepend extend
 "# endregion
 
 " modelines
