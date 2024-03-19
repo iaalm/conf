@@ -404,7 +404,7 @@ call which_key#register('<Space>', "g:which_key_map")
 "# endregion
 
 "# region region comment fold
-autocmd Syntax * syn region regionComment start='[ \t]*\(#\|//\|//#\|/* #\|"#\) \?region' end='[ \t]*\(#\|//\|//#\|/* #\|"#\) \?endregion' transparent fold keepend extend
+autocmd Syntax * syn region regionComment start='\(#\|//\|//#\|/* #\|"#\) \?region' end='\(#\|//\|//#\|/* #\|"#\) \?endregion' transparent fold keepend extend
 "# endregion
 
 " modelines
