@@ -50,7 +50,6 @@ Plug 'leafgarland/typescript-vim'
 if has("win32") || has("win64")
     Plug 'pprovost/vim-ps1'
 
-    "# region COC
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Make <CR> to accept selected completion item or notify coc.nvim to format
     " <C-g>u breaks current undo, please make your own choice
@@ -103,7 +102,6 @@ if has("win32") || has("win64")
     nmap <leader>cl  <Plug>(coc-codelens-action)
     " Add `:Format` command to format current buffer
     nmap <leader>cF :call CocActionAsync('format')<CR>
-    "# endregion
 end
 call plug#end()
 set bg=light
