@@ -49,62 +49,62 @@ Plug 'leafgarland/typescript-vim'
 " C# and Powershell
 if has("win32") || has("win64")
     Plug 'pprovost/vim-ps1'
-
- "# region
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
- "# endregion
-    " Make <CR> to accept selected completion item or notify coc.nvim to format
-    " <C-g>u breaks current undo, please make your own choice
-    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-    " GoTo code navigation
-    nmap <silent> gd <Plug>(coc-definition)
-    nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> gi <Plug>(coc-implementation)
-    nmap <silent> gr <Plug>(coc-references)
-
-    " Use K to show documentation in preview window
-    nnoremap <silent> K :call ShowDocumentation()<CR>
-
-    function! ShowDocumentation()
-      if CocAction('hasProvider', 'hover')
-        call CocActionAsync('doHover')
-      else
-        call feedkeys('K', 'in')
-      endif
-    endfunction
-
-    " other mapping
-    " Symbol renaming
-    let g:which_key_map.c = { 'name': '+CoC'}
-    nmap <leader>cR :CocRestart<CR>
-    nmap <leader>cr <Plug>(coc-rename)
-
-    " Formatting selected code
-    xmap <leader>cf  <Plug>(coc-format-selected)
-    nmap <leader>cf  <Plug>(coc-format-selected)
-
-    " Applying code actions to the selected code block
-    " Example: `<leader>aap` for current paragraph
-    xmap <leader>ca  <Plug>(coc-codeaction-selected)
-    nmap <leader>ca  <Plug>(coc-codeaction-selected)
-
-    " Remap keys for applying code actions at the cursor position
-    nmap <leader>cc  <Plug>(coc-codeaction-cursor)
-    " Remap keys for apply code actions affect whole buffer
-    nmap <leader>cs  <Plug>(coc-codeaction-source)
-    " Apply the most preferred quickfix action to fix diagnostic on the current line
-    nmap <leader>cq  <Plug>(coc-fix-current)
-
-    " Remap keys for applying refactor code actions
-    nmap <silent> <leader>ce <Plug>(coc-codeaction-refactor)
-    xmap <silent> <leader>cr  <Plug>(coc-codeaction-refactor-selected)
-    nmap <silent> <leader>cr  <Plug>(coc-codeaction-refactor-selected)
-    " Run the Code Lens action on the current line
-    nmap <leader>cl  <Plug>(coc-codelens-action)
-    " Add `:Format` command to format current buffer
-    nmap <leader>cF :call CocActionAsync('format')<CR>
 end
+
+"# region COC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                          \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" other mapping
+" Symbol renaming
+let g:which_key_map.c = { 'name': '+CoC'}
+nmap <leader>cR :CocRestart<CR>
+nmap <leader>cr <Plug>(coc-rename)
+
+" Formatting selected code
+xmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>cf  <Plug>(coc-format-selected)
+
+" Applying code actions to the selected code block
+" Example: `<leader>aap` for current paragraph
+xmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>cc  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>cs  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>cq  <Plug>(coc-fix-current)
+
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>ce <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>cr  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>cr  <Plug>(coc-codeaction-refactor-selected)
+" Run the Code Lens action on the current line
+nmap <leader>cl  <Plug>(coc-codelens-action)
+" Add `:Format` command to format current buffer
+nmap <leader>cF :call CocActionAsync('format')<CR>
+"# endregion
 call plug#end()
 set bg=light
 "# endregion vim-plug
@@ -373,7 +373,7 @@ endfunction
 let g:which_key_map.x = { 'name': '+Miscellaneous'}
 command! -bang -nargs=0 GGPush call GitPush("<bang>")
 command! -nargs=0 GGPull :execute ":Git! pull origin " . FugitiveHead()
-command! -nargs=0 GGFetch :Git! fetch origin
+command! -nargs=0 GGFetch :Git! fetch origin -p
 command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
 nmap <Leader>xr :ReloadConfig<CR>
 command! -nargs=0 ToggleVerbose :execute "call ToggleVerbose()"
