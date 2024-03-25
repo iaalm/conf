@@ -32,7 +32,7 @@ let g:fzf_session_path = $HOME . "/.vim_session"
 Plug 'airblade/vim-rooter'
 let g:rooter_patterns = ['.git']
 " git
-Plug 'itchyny/lightline.vim', { 'for': 'cs' }
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 " logfile highlight
 Plug 'mtdl9/vim-log-highlighting'
@@ -298,20 +298,22 @@ nmap <Leader>mp <Plug>BookmarkPrev
 " endif
 "# endregion
 
-"# region language specific settings
-" C sharp
-" autocmd FileType cs set foldlevel=2    " display namespace - class - function
-autocmd FileType cs let g:sharpenup_statusline_opts = { 'Highlight': 0 }
-autocmd FileType cs let g:lightline = {
+"# region lightline
+let g:sharpenup_statusline_opts = { 'Highlight': 0 }
+let g:lightline = {
 \ 'active': {
-\   'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
+\   'right': [['lineinfo'], ['percent'], ['bufnr', 'fileformat', 'fileencoding', 'filetype']]
 \ },
 \ 'inactive': {
-\   'right': [['lineinfo'], ['percent']]
+\   'right': [['lineinfo'], ['percent'], ['bufnr'] ]
 \ },
 \ 'component': {
+\   'bufnr': '%n'
 \ }
 \}
+"# endregion
+
+"# region language specific settings
 
 " Json
 autocmd FileType json set foldlevel=20
