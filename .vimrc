@@ -358,7 +358,7 @@ endfunction
 function RandomColorScheme()
   let l:colors = split(globpath(&rtp,"**/colors/*.vim"),"\n") 
   let l:color = l:colors[localtime() % len(l:colors)]
-  let l:cname = split(split(l:color, "/")[-1], "\\.")[0]
+  let l:cname = split(split(l:color, "[/\\\\]")[-1], "\\.")[0]
   exe 'colorscheme ' . l:cname
 endfunction
 
@@ -407,7 +407,7 @@ call which_key#register('<Space>', "g:which_key_map")
 "# endregion
 
 "# region region comment fold
-autocmd Syntax * syn region regionComment start='^[ \t]*\(#\|//\|//#\|/\* #\|"#\) \?region' end='^[ \t]*\(#\|//\|//#\|/\* #\|"#\) \?endregion' transparent fold keepend extend
+"autocmd Syntax * syn region regionComment start='^[ \t]*\(#\|//\|//#\|/\* #\|"#\) \?region' end='^[ \t]*\(#\|//\|//#\|/\* #\|"#\) \?endregion' transparent fold keepend extend
 "# endregion
 
 " modelines
