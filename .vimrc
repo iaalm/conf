@@ -135,6 +135,8 @@ end
 "# region "set" settings
 if has("gui_running")
     colo gruvbox
+    set guioptions-=m
+    set guioptions-=T
 else
     colo blue
 endif
