@@ -164,6 +164,8 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set smarttab
+" no to make window size equal
+set noequalalways
 " always show statusline
 set laststatus=2
 " complete not search current dir
