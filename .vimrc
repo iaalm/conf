@@ -306,10 +306,15 @@ nmap <Leader>mp <Plug>BookmarkPrev
 let g:sharpenup_statusline_opts = { 'Highlight': 0 }
 let g:lightline = {
 \ 'active': {
+\   'left': [[ 'mode', 'paste'], ['filename', 'gitbranch', 'readonly', 'modified']],
 \   'right': [['lineinfo'], ['percent'], ['bufnr', 'fileformat', 'fileencoding', 'filetype']]
 \ },
 \ 'inactive': {
+\   'left': [['filename', 'readonly', 'modified']],
 \   'right': [['lineinfo'], ['percent'], ['bufnr'] ]
+\ },
+\ 'component_function': {
+\   'gitbranch': 'FugitiveHead'
 \ },
 \ 'component': {
 \   'bufnr': '%n'
