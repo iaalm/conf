@@ -3,13 +3,15 @@ curl -fLo ~/.vimrc --create-dirs \
     https://raw.githubusercontent.com/iaalm/conf/main/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sudo apt install -y nodejs npm
 
 # zsh
-sudo apt install zsh
+sudo apt install -y zsh
+sudo chsh $USER -s /usr/bin/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # python
-sudo apt install python3-build python3-hatchling python3-venv python3-keyring
+sudo apt install -y python3-build python3-hatchling python3-venv python3-keyring
 pip install --break-system-packages  artifacts-keyring
 
 # credential manager
