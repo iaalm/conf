@@ -22,3 +22,6 @@ wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 # docker
 sudo groupadd docker
 sudo gpasswd -a $USER docker
+
+# dotnet
+sudo apt install -y dotnet8
