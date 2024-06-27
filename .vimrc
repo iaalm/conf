@@ -138,7 +138,7 @@ if has("gui_running")
     set guioptions-=m
     set guioptions-=T
 else
-    colo blue
+    colo focuspoint
 endif
 let &bg='dark'
 " colo solarized
