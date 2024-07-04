@@ -11,7 +11,7 @@ sudo chsh $USER -s /usr/bin/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # python
-sudo apt install -y python3-build python3-hatchling python3-venv python3-keyring
+sudo apt install -y python3-build python3-hatchling python3-venv python3-keyring python3-isort black pre-commit
 pip install --break-system-packages  artifacts-keyring
 
 # credential manager
