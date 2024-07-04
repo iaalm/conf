@@ -3,7 +3,7 @@ curl -fLo ~/.vimrc --create-dirs \
     https://raw.githubusercontent.com/iaalm/conf/main/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo apt install -y nodejs npm
+sudo apt install -y nodejs npm universal-ctags pre-commit
 
 # zsh
 sudo apt install -y zsh
@@ -11,7 +11,7 @@ sudo chsh $USER -s /usr/bin/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # python
-sudo apt install -y python3-build python3-hatchling python3-venv python3-keyring python3-isort black pre-commit
+sudo apt install -y python3-build python3-hatchling python3-venv python3-keyring python3-isort black
 pip install --break-system-packages  artifacts-keyring
 
 # credential manager
