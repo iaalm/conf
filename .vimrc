@@ -20,6 +20,7 @@ Plug 'liuchengxu/vim-which-key'
 let g:which_key_map = {}
 
 Plug 'preservim/nerdtree'
+Plug 'wellle/context.vim'
 let NERDTreeQuitOnOpen=1
 " Easy motion
 Plug 'easymotion/vim-easymotion'
