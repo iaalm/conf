@@ -25,3 +25,6 @@ sudo gpasswd -a $USER docker
 
 # dotnet
 sudo apt install -y dotnet8
+
+# tools
+sudo apt install -y jq ripgrep
