@@ -3,4 +3,4 @@ choco install -y python311 vim-x64 make jq ripgrep universal-ctags 7zip azcopy A
 iwr https://raw.githubusercontent.com/iaalm/conf/main/.vimrc -OutFile ~/_vimrc
 iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
     ni $HOME/vimfiles/autoload/plug.vim -Force
-echo "set guifont=SauceCodePro_NFM:h12:cANSI:qDRAFT" >> ~/_gvimrc
+echo "set guifont=SauceCodePro_NFM:h12:cANSI:qDRAFT" > ~/_gvimrc
