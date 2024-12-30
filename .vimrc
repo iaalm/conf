@@ -414,6 +414,12 @@ function GitPush(bang)
   endif
   :execute ":Git! push" . l:p ." -u origin " . FugitiveHead()
 endfunction
+
+function  UnescapeLogFunction()
+  :%s/\\\+\(n\|r\)/\r/g
+  :g/^$/d
+  :%s/\\\+\("\|'\)/\1/g
+endfunction
 "# endregion
 
 "# region quick git command
@@ -441,6 +447,8 @@ command -nargs=0 NUM :set number relativenumber
 nmap <Leader>xn :NUM<CR>
 command -nargs=0 INFO :echo '#buffer: ' . bufnr('%') . ', #window: ' . winnr() . ', filetype: ' . &filetype
 nmap <Leader>xi :INFO<CR>
+command UnescapeLog call UnescapeLogFunction()
+nmap <Leader>xe :UnescapeLog<CR>
 let g:which_key_map.t = { 'name': '+Tags'}
 command TagsBuild :!git ls-tree --full-tree --name-only -r HEAD | ctags -L -
 nmap <Leader>tb :TagsBuild<CR>
