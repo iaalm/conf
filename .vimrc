@@ -415,10 +415,17 @@ function GitPush(bang)
   :execute ":Git! push" . l:p ." -u origin " . FugitiveHead()
 endfunction
 
+function UnescapeUnicode(code, chr)
+  :execute ':%s/\\\+u' . a:code . '/' . a:chr . '/ge'
+endfunction
+
 function  UnescapeLogFunction()
-  :%s/\\\+\(n\|r\)/\r/g
+  " this is a function to unescape strings like \r\n\"\u003c in log file
+  :%s/\\\+\(n\|r\)/\r/ge
   :g/^$/d
-  :%s/\\\+\("\|'\)/\1/g
+  :%s/\\\+\("\|'\)/\1/ge
+  call UnescapeUnicode('003c', '<')
+  call UnescapeUnicode('003e', '>')
 endfunction
 "# endregion
 
