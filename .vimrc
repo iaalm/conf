@@ -251,8 +251,8 @@ vnoremap ) :call AddParenthese(1)<CR>
 "# endregion
 
 "# region leaders
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+nnoremap <silent> <leader>      :<c-u>WhichKey '<leader>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  '<localleader>'<CR>
 let g:which_key_map.s = 'nohlsearch'
 nnoremap <leader>s :nohlsearch<CR>
 let g:which_key_map.p = ':Commands'
