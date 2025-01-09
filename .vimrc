@@ -135,6 +135,7 @@ end
 
 "# region "set" settings
 if has("gui_running")
+    " colo gruvbox
     colo wildcharm
     set guioptions-=m
     set guioptions-=T
