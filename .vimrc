@@ -35,6 +35,8 @@ let g:rooter_patterns = ['.git']
 " git
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+" Json
+Plug 'neoclide/jsonc.vim'
 " logfile highlight
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'MattesGroeger/vim-bookmarks'
@@ -363,6 +365,7 @@ let g:lightline = {
 
 " Json
 autocmd FileType json set foldlevel=20
+autocmd FileType json set syntax=jsonc
 
 " JavaScript
 autocmd FileType javascript,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
