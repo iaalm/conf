@@ -270,8 +270,16 @@ nnoremap <leader>r :Sessions<CR>
 let g:which_key_map.f = 'Rg search'
 nnoremap <leader>f :Rg <C-R><C-W><CR>
 vnoremap <leader>f y:Rg <C-R>"<CR>
-let g:which_key_map.g = 'Git'
-nnoremap <leader>g :G<CR><C-W>10_
+let g:which_key_map.g = { 'name': '+Git' }
+nnoremap <leader>gg :G<CR><C-W>10_
+let g:which_key_map.g.g = 'Git panel'
+nnoremap <leader>gp :GGPush<CR>
+nnoremap <leader>gP :GGPush!<CR>
+nnoremap <leader>gf :GGFetch<CR>
+nnoremap <leader>gc :G commit<CR>
+nnoremap <leader>gC :G commit --no-verify<CR>
+nnoremap <leader>ga :G commit --amend<CR>
+nnoremap <leader>gl :GGPull<CR>
 "nnoremap <leader>g :vertical botright Git<CR>
 let g:which_key_map.y = { 'name': '+Copy'}
 let g:which_key_map.y.f = 'Copy relative path'
