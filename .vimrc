@@ -276,6 +276,7 @@ let g:which_key_map.g.g = 'Git panel'
 nnoremap <leader>gp :GGPush<CR>
 nnoremap <leader>gP :GGPush!<CR>
 nnoremap <leader>gf :GGFetch<CR>
+nnoremap <leader>gF :GGFetchThis<CR>
 nnoremap <leader>gc :G commit<CR>
 nnoremap <leader>gC :G commit --no-verify<CR>
 nnoremap <leader>ga :G commit --amend<CR>
@@ -446,6 +447,7 @@ let g:which_key_map.x = { 'name': '+Miscellaneous'}
 command! -bang -nargs=0 GGPush call GitPush("<bang>")
 command! -nargs=0 GGPull :execute ":Git! pull origin " . FugitiveHead()
 command! -nargs=0 GGFetch :Git! fetch origin -p
+command! -nargs=0 GGFetchThis :execute ":Git! fetch origin " . FugitiveHead()
 command! -nargs=0 ReloadConfig :execute ":source $MYVIMRC"
 nmap <Leader>xr :ReloadConfig<CR>
 command! -nargs=0 ToggleVerbose :execute "call ToggleVerbose()"
