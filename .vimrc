@@ -12,7 +12,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'rafi/awesome-vim-colorschemes'
 " General
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 Plug 'iaalm/terminal-drawer.vim', { 'branch': 'main' }
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
