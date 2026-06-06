@@ -413,6 +413,10 @@ function! FormatJson()
     %!python -m json.tool
 endfunction
 
+function! FormatXml()
+    %!xmllint --format -
+endfunction
+
 function RandomColorScheme()
   let l:colors = split(globpath(&rtp,"**/colors/*.vim"),"\n") 
   let l:color = l:colors[localtime() % len(l:colors)]
