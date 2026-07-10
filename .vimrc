@@ -446,6 +446,12 @@ function  UnescapeLogFunction()
 endfunction
 "# endregion
 
+function  CompileMarpFunction()
+    :w
+    :!marp %
+endfunction
+
+
 "# region quick git command
 let g:which_key_map.x = { 'name': '+Miscellaneous'}
 command! -bang -nargs=0 GGPush call GitPush("<bang>")
@@ -481,6 +487,13 @@ command -nargs=1 TagsAdd :!ctags -a -R "<args>"
 nmap <Leader>ta :TagsAdd<CR>
 command -nargs=0 TagsDel :call delete('tags')
 nmap <Leader>td :TagsDel<CR>
+
+
+let g:which_key_map.M = { 'name': '+Marp'}
+nmap <Leader>MM :CompileMarp<CR>
+command! -nargs=0 CompileMarp call CompileMarpFunction()
+
+
 call which_key#register('<Space>', "g:which_key_map")
 "# endregion
 
